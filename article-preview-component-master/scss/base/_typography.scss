@@ -1,0 +1,70 @@
+@import "../abstract/variables";
+@import "../abstract/mixins";
+
+html {
+  font-family: "Manrope", sans-serif;
+  font-size: 13px;
+
+  @media screen and (min-width: 125rem) {
+    font-size: 1.7rem;
+  }
+
+  @media screen and (max-width: 21rem) {
+    font-size: .7rem;
+  }
+
+  @media screen and (max-width: 16rem) {
+    font-size: .5rem;
+  }
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h2 {
+  color: $heading-color;
+  font-size: clamp(1.231rem, 1vw + 0.7rem, 1.538rem);
+  line-height: clamp(1.846rem, 1vw + 1.35rem, 2.154rem);
+  font-weight: 700;
+}
+
+p {
+  @include body-font;
+  color: $body-color;
+  font-weight: 500;
+  margin: clamp(1rem, 1vw, 1.5rem) 0;
+  letter-spacing: 0.12px;
+}
+
+.author-info {
+  h3 {
+    color: $heading-color;
+    font-weight: 700;
+    @include body-font;
+  }
+
+  span {
+    color: $body-color-light;
+    font-weight: 500;
+    @include body-font;
+  }
+}
+
+.share-block {
+  span {
+    @include body-font;
+    text-transform: uppercase;
+    color: $body-color-light;
+    letter-spacing: 5px;
+    width: max-content;
+    margin-right: -.4rem;
+  }
+
+  img {
+    width: 1.5rem;
+    height: 1.55rem;
+  }
+}

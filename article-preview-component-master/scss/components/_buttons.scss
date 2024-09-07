@@ -1,0 +1,20 @@
+.share-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: $body-bg;
+    border: none;
+    cursor: pointer;
+    margin: 5px 0;
+
+    img {
+        width: 1.1rem;
+        height: auto;
+    }
+}
+
+.share-block button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
