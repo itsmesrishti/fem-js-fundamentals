@@ -1,0 +1,57 @@
+@import "../abstract/variables";
+
+@font-face {
+  font-family: $font-bold;
+  src: url("/assets/fonts/Roboto-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("/assets/fonts/Roboto-Regular.ttf");
+  font-weight: 400;
+}
+
+html {
+  font-family: $font-regular, sans-serif;
+  color: $primary-color;
+  line-height: 150%;
+}
+
+h2 {
+  font-size: clamp(2.5rem, 3.9vw + 1rem, 3.5rem);
+  font-family: $font-bold, sans-serif;
+  line-height: 100%;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+form {
+  label {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+}
+
+.error-msg {
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: normal;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+  color: $primary-color;
+}
+
+footer {
+  text-align: center;
+
+  p {
+    line-height: normal;
+    font-size: 0.8rem;
+  }
+}

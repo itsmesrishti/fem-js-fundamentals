@@ -1,54 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <link rel="stylesheet" href="main.css">
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
 
-  <script src="script.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="/scss/main.css" />
 
-  <main>
-    <picture>
-      <source srcset="/assets/images/illustration-sign-up-desktop.svg" media="(min-width: 64em)">
-      <img src="/assets/images/illustration-sign-up-mobile.svg" alt="illustration">
-    </picture>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="card">
+      <picture>
+        <source
+          srcset="/assets/images/illustration-sign-up-desktop.svg"
+          media="(min-width: 64em)"
+        />
+        <img
+          src="/assets/images/illustration-sign-up-mobile.svg"
+          alt="illustration"
+        />
+      </picture>
+      <div class="content subscription-content">
+        <h2>Stay updated!</h2>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul>
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+        <form>
+          <label for="email">Email address</label>
+          <span class="error-msg">Valid email required</span>
+          <input type="email" placeholder="email@company.com" id="email" />
+          <button type="submit">Subscribe to monthly newsletter</button>
+        </form>
+      </div>
 
-    <div>
-      <h2>Stay updated!</h2>
-      <p>Join 60,000+ product managers receiving monthly updates on:</p>
-      <ul>
-        <li>Product discovery and building what matters</li>
-        <li>Measuring to ensure updates are a success</li>
-        <li>And much more!</li>
-      </ul>
-      <form>
-        <label for="email">Email address</label>
-        <input type="email" placeholder="email@company.com" id="email">
-        <button type="submit">Subscribe to monthly newsletter</button>
-      </form>
-    </div>
+      <div class="content success-content">
+        <img src="/assets/images/icon-success.svg" alt="success icon" />
+        <h2>Thanks for subscribing!</h2>
+        <p>
+          A confirmation email has been sent to
+          <a href="mailto:ash@loremcompany.com">ash@loremcompany.com</a>. Please
+          open it and click the button inside to confirm your subscription.
+        </p>
+        <button type="button">Dismiss message</button>
+      </div>
+    </main>
 
-    <div>
-      <img src="/assets/images/icon-success.svg" alt="success icon">
-      <h2>Thanks for subscribing!</h2>
+    <footer class="attribution">
       <p>
-        A confirmation email has been sent to <a href="mailto:ash@loremcompany.com">ash@loremcompany.com</a>.
-        Please open it and click the button inside to confirm your subscription.
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >
       </p>
-      <button type="button">Dismiss message</button>
-    </div>
-  </main>
-  
-  <footer class="attribution">
-    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p> 
-    <p>Coded by <a href="https://www.frontendmentor.io/profile/itsmesrishti" target="_blank">Srishti Chaudhary</a>.</p>
-  </footer>
-</body>
+      <p>
+        Coded by
+        <a
+          href="https://www.frontendmentor.io/profile/itsmesrishti"
+          target="_blank"
+          >Srishti Chaudhary</a
+        >
+      </p>
+    </footer>
+  </body>
 </html>

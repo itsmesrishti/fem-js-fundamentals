@@ -2,3 +2,112 @@
 @import "./abstract/variables";
 @import "./base/reset";
 @import "./base/typography";
+
+.card {
+  background-color: $card-bg;
+  border-radius: 2.2rem;
+
+  .content {
+    padding: 1.5rem 1.2rem 1.2rem;
+  }
+
+  picture img {
+    width: 100%;
+  }
+}
+
+ul {
+  list-style: none;
+  list-style-position: inside;
+  padding-left: 2.1rem;
+
+  li {
+    margin-top: 0.7rem;
+
+    &::before {
+      content: "";
+      display: block;
+      background-image: url("/assets/images/icon-list.svg");
+      width: 21px;
+      height: 21px;
+      position: absolute;
+      left: 1.2rem;
+    }
+  }
+}
+
+// form
+form {
+  margin-top: 2rem;
+
+  input {
+    display: block;
+    border: $input-field-color solid 1px;
+    border-radius: 0.5rem;
+    height: 3.5rem;
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0 1rem;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+}
+
+// error state
+.error {
+  color: $error;
+  border-color: $error;
+  background-color: $error-light;
+}
+
+.error-msg {
+    display: none;
+    color: $error;
+    float: right;
+}
+
+button {
+  background-color: $primary-color;
+  color: $card-bg;
+  font-weight: 700;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(#ff6a3a, #ff527b);
+  }
+}
+
+// .subscription-content,
+// picture {
+//   display: none;
+// }
+
+.success-content {
+  display: none;
+  margin-top: 6rem;
+
+  h2 {
+    margin: 2rem 0 1.5rem;
+  }
+
+  button {
+    margin-top: 10rem;
+  }
+}
+
+// footer
+footer {
+  margin-bottom: 0.8rem;
+  p {
+    margin: 0 0 0.5rem;
+  }
+}
