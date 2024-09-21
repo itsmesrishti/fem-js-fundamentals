@@ -47,7 +47,7 @@ button {
   font-size: 1rem;
 }
 
-.error-msg {
+#error-msg {
   font-size: 0.8rem;
   font-weight: 700;
   line-height: normal;
@@ -153,9 +153,15 @@ form input {
   margin: 0.5rem 0 1.5rem;
   cursor: pointer;
 }
-form input:hover {
+form input:focus {
+  outline: none;
+}
+form:not(:has(.error)):hover {
   border-color: #242742;
   color: #242742;
+}
+form:not(:has(.error)) input:focus {
+  border-color: #242742;
 }
 
 .error {
@@ -164,11 +170,17 @@ form input:hover {
   background-color: rgba(255, 97, 85, 0.15);
 }
 
-.error-msg {
+#error-msg {
+  display: none;
   color: #FF6155;
   position: absolute;
   top: 0.37rem;
   right: 0;
+}
+
+.valid-email {
+  color: green;
+  border-color: green;
 }
 
 button {
@@ -186,16 +198,9 @@ button:hover {
   background: linear-gradient(#ff6a3a, #ff527b);
 }
 
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
 .success-content {
   margin-top: 6rem;
+  display: none;
 }
 .success-content h2 {
   margin: 2rem 0 1.5rem;
@@ -210,6 +215,10 @@ button:hover {
   .success-content button {
     margin-top: 2rem;
   }
+}
+
+.show {
+  display: block;
 }
 
 footer {

@@ -39,23 +39,29 @@
           <li>Measuring to ensure updates are a success</li>
           <li>And much more!</li>
         </ul>
-        <form>
-          <label for="email">Email address</label>
-          <span class="error-msg">Valid email required</span>
-          <input type="email" placeholder="email@company.com" id="email" />
+        <form id="form">
+          <label for="input">Email address</label>
+          <span id="error-msg">Valid email required</span>
+          <input
+            type="email"
+            placeholder="email@company.com"
+            id="input"
+            name="email"
+            autocomplete="email"
+          />
           <button type="submit">Subscribe to monthly newsletter</button>
         </form>
       </div>
 
-      <div class="content success-content hide">
+      <div class="content success-content">
         <img src="/assets/images/icon-success.svg" alt="success icon" />
         <h2>Thanks for subscribing!</h2>
         <p>
           A confirmation email has been sent to
-          <a href="mailto:ash@loremcompany.com">ash@loremcompany.com</a>. Please
-          open it and click the button inside to confirm your subscription.
+          <a id="user-mail"></a>. Please open it and click the button inside to
+          confirm your subscription.
         </p>
-        <button type="button">Dismiss message</button>
+        <button type="button" id="dismiss-btn">Dismiss message</button>
       </div>
     </main>
 

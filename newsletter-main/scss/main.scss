@@ -79,10 +79,18 @@ form {
     margin: 0.5rem 0 1.5rem;
     cursor: pointer;
 
-    &:hover {
-      border-color: $primary-color;
-      color: $primary-color;
+    &:focus {
+      outline: none;
     }
+  }
+
+  &:not(:has(.error)):hover {
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &:not(:has(.error)) input:focus {
+    border-color: $primary-color;
   }
 }
 
@@ -93,12 +101,18 @@ form {
   background-color: $error-light;
 }
 
-.error-msg {
-    // display: none;
+#error-msg {
+    display: none;
     color: $error;
     position: absolute;
     top: 0.37rem;
     right: 0;
+}
+
+// success state
+.valid-email {
+  color: green;
+  border-color: green;
 }
 
 button {
@@ -122,16 +136,9 @@ button {
 //   display: none;
 // }
 
-.hide {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
 .success-content {
   margin-top: 6rem;
+  display: none;
 
   h2 {
     margin: 2rem 0 1.5rem;
@@ -148,6 +155,10 @@ button {
       margin-top: 2rem;
     }
   }
+}
+
+.show {
+  display: block;
 }
 
 // footer
