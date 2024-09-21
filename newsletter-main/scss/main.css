@@ -21,7 +21,7 @@ html {
 }
 @media screen and (min-width: 120rem) {
   html {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -87,6 +87,10 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+}
+@media screen and (max-height: 52rem) and (min-width: 64rem) {
+  body {
     padding: 2rem 1rem 0;
   }
 }
@@ -100,8 +104,14 @@ body {
   padding: 1.5rem 1.2rem 1.2rem;
 }
 .card picture img {
-  height: 100%;
+  width: 100%;
   display: block;
+}
+@media screen and (min-width: 64rem) {
+  .card picture img {
+    height: 100%;
+    width: auto;
+  }
 }
 .card:has(.show) {
   max-width: 31.5rem;
@@ -233,7 +243,7 @@ footer p {
     margin-top: 2rem;
   }
 }
-@media screen and (min-width: 90rem) {
+@media screen and (min-width: 90rem) and (min-height: 53rem) {
   footer {
     position: absolute;
     bottom: 0;

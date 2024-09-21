@@ -9,6 +9,9 @@ body {
     background-color: $bg-color;
     @include flex;
     flex-direction: column;
+  }
+
+  @media screen and (max-height: 52rem) and (min-width: 64rem) {
     padding: 2rem 1rem 0;
   }
 }
@@ -23,8 +26,13 @@ body {
   }
 
   picture img {
-    height: 100%;
+    width: 100%;
     display: block;
+
+    @media screen and (min-width: 64rem) {
+      height: 100%;
+      width: auto;
+    }
   }
 
   &:has(.show) {
@@ -173,7 +181,7 @@ footer {
     margin-top: 2rem;
   }
 
-  @media screen and (min-width: 90rem) {
+  @media screen and (min-width: 90rem) and (min-height: 53rem) {
     position: absolute;
     bottom: 0;
   }
