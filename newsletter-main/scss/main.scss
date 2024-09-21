@@ -3,9 +3,20 @@
 @import "./base/reset";
 @import "./base/typography";
 
+body {
+  min-height: 100vh;
+  @media screen and (min-width: 64rem) {
+    background-color: $bg-color;
+    @include flex;
+    flex-direction: column;
+    padding: 2rem 1rem 0;
+  }
+}
+
 .card {
   background-color: $card-bg;
   border-radius: 2.2rem;
+  max-width: 58rem;
 
   .content {
     padding: 1.5rem 1.2rem 1.2rem;
@@ -13,6 +24,22 @@
 
   picture img {
     width: 100%;
+    display: block;
+  }
+
+  &:has(.show) {
+    max-width: 31.5rem;
+  }
+
+  @media screen and (min-width: 64rem) {
+    @include flex;
+    flex-direction: row-reverse;
+    padding: 1.5rem;
+    max-height: 40rem;
+
+    .subscription-content {
+      padding-left: 2rem;
+    }
   }
 }
 
@@ -20,6 +47,7 @@ ul {
   list-style: none;
   list-style-position: inside;
   padding-left: 2.1rem;
+  position: relative;
 
   li {
     margin-top: 0.7rem;
@@ -31,7 +59,7 @@ ul {
       width: 21px;
       height: 21px;
       position: absolute;
-      left: 1.2rem;
+      left: 0;
     }
   }
 }
@@ -39,6 +67,7 @@ ul {
 // form
 form {
   margin-top: 2rem;
+  position: relative;
 
   input {
     display: block;
@@ -47,7 +76,7 @@ form {
     height: 3.5rem;
     width: 100%;
     padding: 1rem;
-    margin: 0.5rem 0 1rem;
+    margin: 0.5rem 0 1.5rem;
     cursor: pointer;
 
     &:hover {
@@ -65,9 +94,11 @@ form {
 }
 
 .error-msg {
-    display: none;
+    // display: none;
     color: $error;
-    float: right;
+    position: absolute;
+    top: 0.37rem;
+    right: 0;
 }
 
 button {
@@ -91,8 +122,15 @@ button {
 //   display: none;
 // }
 
-.success-content {
+.hide {
   display: none;
+}
+
+.show {
+  display: block;
+}
+
+.success-content {
   margin-top: 6rem;
 
   h2 {
@@ -102,6 +140,14 @@ button {
   button {
     margin-top: 10rem;
   }
+
+  @media screen and (min-width: 64rem) {
+    margin-top: 0;
+
+    button {
+      margin-top: 2rem;
+    }
+  }
 }
 
 // footer
@@ -109,5 +155,14 @@ footer {
   margin-bottom: 0.8rem;
   p {
     margin: 0 0 0.5rem;
+  }
+
+  @media screen and (min-width: 64rem) {
+    margin-top: 2rem;
+  }
+
+  @media screen and (min-width: 90rem) {
+    position: absolute;
+    bottom: 0;
   }
 }

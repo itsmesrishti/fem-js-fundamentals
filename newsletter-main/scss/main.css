@@ -19,6 +19,11 @@ html {
   color: #242742;
   line-height: 150%;
 }
+@media screen and (min-width: 120rem) {
+  html {
+    font-size: 1.5rem;
+  }
+}
 
 h2 {
   font-size: clamp(2.5rem, 3.9vw + 1rem, 3.5rem);
@@ -33,6 +38,13 @@ p {
 form label {
   font-size: 0.8rem;
   font-weight: 700;
+}
+form input {
+  font-size: 1rem;
+}
+
+button {
+  font-size: 1rem;
 }
 
 .error-msg {
@@ -54,22 +66,65 @@ footer p {
   line-height: normal;
   font-size: 0.8rem;
 }
+@media screen and (min-width: 64rem) {
+  footer {
+    color: white;
+    opacity: 0.5;
+    font-weight: 400;
+  }
+  footer a {
+    color: white;
+  }
+}
+
+body {
+  min-height: 100vh;
+}
+@media screen and (min-width: 64rem) {
+  body {
+    background-color: #36384D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem 1rem 0;
+  }
+}
 
 .card {
   background-color: white;
   border-radius: 2.2rem;
+  max-width: 58rem;
 }
 .card .content {
   padding: 1.5rem 1.2rem 1.2rem;
 }
 .card picture img {
   width: 100%;
+  display: block;
+}
+.card:has(.show) {
+  max-width: 31.5rem;
+}
+@media screen and (min-width: 64rem) {
+  .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row-reverse;
+    padding: 1.5rem;
+    max-height: 40rem;
+  }
+  .card .subscription-content {
+    padding-left: 2rem;
+  }
 }
 
 ul {
   list-style: none;
   list-style-position: inside;
   padding-left: 2.1rem;
+  position: relative;
 }
 ul li {
   margin-top: 0.7rem;
@@ -81,11 +136,12 @@ ul li::before {
   width: 21px;
   height: 21px;
   position: absolute;
-  left: 1.2rem;
+  left: 0;
 }
 
 form {
   margin-top: 2rem;
+  position: relative;
 }
 form input {
   display: block;
@@ -94,7 +150,7 @@ form input {
   height: 3.5rem;
   width: 100%;
   padding: 1rem;
-  margin: 0.5rem 0 1rem;
+  margin: 0.5rem 0 1.5rem;
   cursor: pointer;
 }
 form input:hover {
@@ -109,9 +165,10 @@ form input:hover {
 }
 
 .error-msg {
-  display: none;
   color: #FF6155;
-  float: right;
+  position: absolute;
+  top: 0.37rem;
+  right: 0;
 }
 
 button {
@@ -129,8 +186,15 @@ button:hover {
   background: linear-gradient(#ff6a3a, #ff527b);
 }
 
-.success-content {
+.hide {
   display: none;
+}
+
+.show {
+  display: block;
+}
+
+.success-content {
   margin-top: 6rem;
 }
 .success-content h2 {
@@ -139,10 +203,29 @@ button:hover {
 .success-content button {
   margin-top: 10rem;
 }
+@media screen and (min-width: 64rem) {
+  .success-content {
+    margin-top: 0;
+  }
+  .success-content button {
+    margin-top: 2rem;
+  }
+}
 
 footer {
   margin-bottom: 0.8rem;
 }
 footer p {
   margin: 0 0 0.5rem;
+}
+@media screen and (min-width: 64rem) {
+  footer {
+    margin-top: 2rem;
+  }
+}
+@media screen and (min-width: 90rem) {
+  footer {
+    position: absolute;
+    bottom: 0;
+  }
 }/*# sourceMappingURL=main.css.map */
