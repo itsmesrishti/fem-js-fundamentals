@@ -1,0 +1,56 @@
+@import "../abstract/variables";
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-weight: 300;
+  color: $primary-font-color;
+  font-size: clamp(1.5rem, 1.7vw + 1rem, 2.5rem);
+
+  span {
+    color: $secondary-font-color;
+    font-size: 0.94rem;
+  }
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+.time-period h2 {
+  color: $tertiary-font-color;
+  font-weight: 400;
+}
+
+.card h2 {
+  color: $primary-font-color;
+  font-weight: 500;
+}
+
+.current {
+  font-size: clamp(2rem, 2.8vw + 1rem, 3.5rem);
+  font-weight: 300;
+  display: block;
+}
+
+.previous {
+  font-size: 0.94rem;
+  color: $secondary-font-color;
+  display: block;
+}
+
+footer {
+  font-size: 0.8rem;
+  color: $tertiary-font-color;
+  font-weight: 300;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: $tertiary-font-color;
+    font-weight: 500;
+  }
+}

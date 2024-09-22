@@ -1,0 +1,22 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-spacebw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-col-start {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin bg-img {
+  background-repeat: no-repeat;
+  background-position-x: 93%;
+  background-position-y: 32%;
+}

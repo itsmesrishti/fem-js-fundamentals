@@ -1,1 +1,286 @@
-/*# sourceMappingURL=main.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-weight: 300;
+  color: #fff;
+  font-size: clamp(1.5rem, 1.7vw + 1rem, 2.5rem);
+}
+h1 span {
+  color: #BBC0FF;
+  font-size: 0.94rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+}
+
+.time-period h2 {
+  color: #7078C9;
+  font-weight: 400;
+}
+
+.card h2 {
+  color: #fff;
+  font-weight: 500;
+}
+
+.current {
+  font-size: clamp(2rem, 2.8vw + 1rem, 3.5rem);
+  font-weight: 300;
+  display: block;
+}
+
+.previous {
+  font-size: 0.94rem;
+  color: #BBC0FF;
+  display: block;
+}
+
+footer {
+  font-size: 0.8rem;
+  color: #7078C9;
+  font-weight: 300;
+  text-align: center;
+}
+footer a {
+  text-decoration: none;
+  color: #7078C9;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 16rem) {
+  html {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (min-width: 120rem) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+body {
+  background-color: #0E1323;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+@media screen and (max-height: 35rem) {
+  body {
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  main {
+    display: grid;
+    grid-template-columns: 13rem 1fr;
+    gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 90rem) {
+  main {
+    grid-template-columns: 16rem 1fr;
+  }
+}
+@media screen and (max-height: 35rem) {
+  main {
+    margin-top: 2rem;
+  }
+}
+
+.hide {
+  display: none !important;
+}
+
+.active {
+  color: #fff !important;
+}
+
+.profile-section {
+  background-color: #1C204B;
+  border-radius: 0.9rem;
+  margin-bottom: 3.7rem;
+}
+.profile-section img {
+  width: clamp(4rem, 3vw + 2.2rem, 4.875rem);
+  height: clamp(4rem, 3vw + 2.2rem, 4.875rem);
+  border-radius: 50%;
+  outline: 0.2rem solid #fff;
+}
+@media screen and (min-width: 64rem) {
+  .profile-section {
+    margin-top: -2.3rem;
+    margin-bottom: 0;
+  }
+}
+
+.candidate {
+  background-color: #5747EA;
+  border-radius: 0.9rem;
+  padding: 2.16rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.candidate span {
+  display: block;
+}
+@media screen and (min-width: 64rem) {
+  .candidate {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.time-period {
+  padding: 1.52rem 1.5rem 1.52rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.time-period h2:hover {
+  color: #fff;
+  cursor: pointer;
+}
+@media screen and (min-width: 64rem) {
+  .time-period {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .cards-section {
+    display: grid;
+    grid-template-columns: repeat(3, 13rem);
+    gap: 4rem 1.5rem;
+  }
+}
+@media screen and (min-width: 90rem) {
+  .cards-section {
+    grid-template-columns: repeat(3, 16rem);
+  }
+}
+
+.card {
+  background-color: #1C204B;
+  color: #fff;
+  border-radius: 0.9rem;
+  padding: 1.7rem 1.5rem 1.8rem;
+  margin-bottom: 3.7rem;
+  position: relative;
+}
+.card .category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-bottom: 0.5rem;
+}
+.card .time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (min-width: 64rem) {
+  .card .time {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.card::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3.5rem;
+  position: absolute;
+  top: -2.3rem;
+  left: 0;
+  border-radius: 15px 15px 0 0;
+  z-index: -1;
+}
+.card:hover {
+  background-color: #33397A;
+  cursor: pointer;
+}
+@media screen and (min-width: 64rem) {
+  .card {
+    margin-bottom: 0;
+  }
+}
+
+.card.work::before {
+  background-color: #FF8B64;
+  background-image: url("../images/icon-work.svg");
+  background-repeat: no-repeat;
+  background-position-x: 93%;
+  background-position-y: 32%;
+  background-position-y: center;
+}
+
+.card.play::before {
+  background-color: #55C2E6;
+  background-image: url("../images/icon-play.svg");
+  background-repeat: no-repeat;
+  background-position-x: 93%;
+  background-position-y: 32%;
+}
+
+.card.study::before {
+  background-color: #FF5E7D;
+  background-image: url("../images/icon-study.svg");
+  background-repeat: no-repeat;
+  background-position-x: 93%;
+  background-position-y: 32%;
+}
+
+.card.exercise::before {
+  background-color: #4BCF82;
+  background-image: url("../images/icon-exercise.svg");
+  background-repeat: no-repeat;
+  background-position-x: 93%;
+  background-position-y: 32%;
+}
+
+.card.social::before {
+  background-color: #7335D2;
+  background-image: url("../images/icon-social.svg");
+  background-repeat: no-repeat;
+  background-position-x: 93%;
+  background-position-y: 32%;
+}
+
+.card.self-care::before {
+  background-color: #F1C75B;
+  background-image: url("../images/icon-self-care.svg");
+  background-repeat: no-repeat;
+  background-position-x: 93%;
+  background-position-y: 32%;
+  background-position-y: bottom;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 64rem) and (min-height: 35rem) {
+  footer {
+    position: absolute;
+    bottom: 1rem;
+  }
+}/*# sourceMappingURL=main.css.map */
