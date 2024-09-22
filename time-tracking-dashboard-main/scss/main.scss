@@ -5,7 +5,7 @@
 
 html {
   @media screen and (max-width: 16rem) {
-    font-size: .7rem;
+    font-size: 0.7rem;
   }
 
   @media screen and (min-width: 120rem) {
@@ -21,7 +21,7 @@ body {
   padding: 2rem 1rem;
   min-height: 100vh;
 
-  @media screen and (max-height: 35rem) {
+  @media screen and (max-height: 43rem) {
     gap: 2rem;
   }
 }
@@ -37,13 +37,9 @@ main {
     grid-template-columns: 16rem 1fr;
   }
 
-  @media screen and (max-height: 35rem) {
+  @media screen and (max-height: 43rem) {
     margin-top: 2rem;
   }
-}
-
-.hide {
-  display: none !important;
 }
 
 .active {
@@ -64,7 +60,7 @@ main {
   }
 
   @media screen and (min-width: 64rem) {
-    margin-top: -2.3rem;
+    margin-top: -2.8rem;
     margin-bottom: 0;
   }
 }
@@ -82,6 +78,8 @@ main {
 
   @media screen and (min-width: 64rem) {
     @include flex-col-start;
+    gap: 2rem;
+    padding-bottom: 6rem;
   }
 }
 
@@ -97,7 +95,9 @@ main {
 
   @media screen and (min-width: 64rem) {
     @include flex-col-start;
-  } 
+    padding-bottom: 2.1rem;
+    padding-top: 2.2rem;
+  }
 }
 
 // cards section
@@ -125,6 +125,10 @@ main {
     @include flex-spacebw;
     flex-direction: row-reverse;
     margin-bottom: 0.5rem;
+
+    @media screen and (min-width: 64rem) {
+      margin-bottom: 1.5rem;
+    }
   }
 
   .time {
@@ -132,6 +136,7 @@ main {
 
     @media screen and (min-width: 64rem) {
       @include flex-col-start;
+      gap: 0.6rem;
     }
   }
 
@@ -144,7 +149,12 @@ main {
     top: -2.3rem;
     left: 0;
     border-radius: 15px 15px 0 0;
-    z-index: -1
+    z-index: -1;
+
+    @media screen and (min-width: 64rem) {
+      height: 4rem;
+      top: -2.7rem;
+    }
   }
 
   &:hover {
@@ -154,6 +164,7 @@ main {
 
   @media screen and (min-width: 64rem) {
     margin-bottom: 0;
+    max-height: 12.4rem;
   }
 }
 
@@ -197,10 +208,10 @@ main {
 
 footer {
   p {
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
-  @media screen and (min-width: 64rem) and (min-height: 35rem) {
+  @media screen and (min-width: 64rem) and (min-height: 43rem) {
     position: absolute;
     bottom: 1rem;
   }
