@@ -2,3 +2,122 @@
 @import "./base/typography";
 @import "./abstract/variables";
 @import "./abstract/mixins";
+
+body {
+  background-color: $body-bg;
+  @include flex-center-col;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+main {
+  @include flex-center-col;
+  gap: 1rem;
+}
+
+form {
+  background-color: white;
+  border-radius: 1.5rem 1.5rem 0 0;
+  padding: 2rem;
+  width: 100vw;
+}
+
+label, legend {
+  color: $label-color;
+  display: block;
+}
+
+input[type=number] {
+  background-color: $input-field-color;
+  border-radius: 0.3rem;
+  border: 1px solid $input-field-color;
+  width: 100%;
+  height: 3rem;
+  margin-top: 0.4rem;
+  padding: 1rem;
+  text-align: right;
+  color: $higlight-1;
+  caret-color: $highlight-2;
+}
+
+fieldset {
+  border: none;
+  margin: 1.8rem 0;
+
+  button {
+    background-color: $higlight-1;
+    color: $form-bg;
+    border-radius: 0.3rem;
+    height: 3rem;
+    @include flex-center-col;
+    border: none;
+    cursor: pointer;
+  }
+
+  .labels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.4rem;
+  }
+
+  #custom-input {
+    margin-top: 0;
+    
+  }
+
+  // label:has(input[type=radio]:checked) {
+  //   background-color: $highlight-2;
+  //   color: $higlight-1;
+  // }
+}
+
+input[type="radio" i] {
+  appearance: none;
+}
+
+.input-sec-2 {
+  position: relative;
+}
+
+.error-msg {
+  color: $error-color;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+// result section
+.result-sec {
+  background-color: $higlight-1;
+  margin-top: 2rem;
+  border-radius: 0.9rem;
+  padding: 2rem 1rem 1rem;
+
+  button {
+    background-color: $highlight-2;
+    color: $higlight-1;
+    height: 3rem;
+    border-radius: 0.3rem;
+    width: 100%;
+    border: none;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+
+.result {
+  @include flex-center;
+  margin-bottom: 1.3rem;
+
+  span {
+    display: block;
+  }
+}
+
+button:hover {
+  background-color: $hover-color;
+  color: $higlight-1;
+}
