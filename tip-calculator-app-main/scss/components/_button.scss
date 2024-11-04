@@ -1,6 +1,6 @@
 .result-sec {
   button {
-    background-color: $highlight-2;
+    background-color: $disabled-bg;
     color: $higlight-1;
     height: 3rem;
     border-radius: 0.3rem;
@@ -9,6 +9,10 @@
     font-size: 1.25rem;
     text-transform: uppercase;
     cursor: pointer;
+  }
+
+  .active-btn {
+    background-color: $highlight-2;
   }
 }
 

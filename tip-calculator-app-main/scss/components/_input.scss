@@ -15,6 +15,10 @@ input[type="number"] {
   text-align: right;
   color: $higlight-1;
   caret-color: $highlight-2;
+
+  &::placeholder {
+    color: $placeholder-color-2;
+  }
 }
 
 input::-webkit-outer-spin-button,
@@ -36,6 +40,10 @@ fieldset {
 
   #custom-input {
     margin-top: 0;
+
+    &::placeholder {
+      color: $placeholder-color;
+    }
   }
 }
 

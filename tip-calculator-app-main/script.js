@@ -88,6 +88,7 @@ const extractInputValues = (e) => {
     updateOutput(bill, numOfPeople, tipSelected);
     highlightTip(e.target);
     disableInput();
+    resetBtn.classList.add("active-btn");
   } else {
     showAlert(bill, numOfPeople);
   }
@@ -98,9 +99,11 @@ inputCustom.addEventListener("change", () => {
   calcBtn.style.display = "block";
 });
 calcBtn.addEventListener("click", extractInputValues);
+
 resetBtn.addEventListener("click", () => {
   document.querySelector(".tip-selected").classList.remove("tip-selected");
   tipOutput.innerHTML = "$0.00";
   totalOutput.innerHTML = "$0.00"; 
   enableInput();
+  resetBtn.classList.remove("active-btn");
 });

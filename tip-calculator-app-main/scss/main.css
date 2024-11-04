@@ -73,6 +73,12 @@ input[type=number] {
   color: #00474B;
   caret-color: #26C2AE;
 }
+input[type=number]::-moz-placeholder {
+  color: rgba(0, 71, 75, 0.35);
+}
+input[type=number]::placeholder {
+  color: rgba(0, 71, 75, 0.35);
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -92,6 +98,12 @@ fieldset .labels {
 }
 fieldset #custom-input {
   margin-top: 0;
+}
+fieldset #custom-input::-moz-placeholder {
+  color: #547878;
+}
+fieldset #custom-input::placeholder {
+  color: #547878;
 }
 
 input[type=radio i] {
@@ -113,7 +125,7 @@ input[type=radio i] {
 }
 
 .result-sec button {
-  background-color: #26C2AE;
+  background-color: #0D686D;
   color: #00474B;
   height: 3rem;
   border-radius: 0.3rem;
@@ -122,6 +134,9 @@ input[type=radio i] {
   font-size: 1.25rem;
   text-transform: uppercase;
   cursor: pointer;
+}
+.result-sec .active-btn {
+  background-color: #26C2AE;
 }
 
 button:hover {
