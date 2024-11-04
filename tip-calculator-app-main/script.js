@@ -85,7 +85,6 @@ const extractInputValues = (e) => {
   const numOfPeople = inputPeople.value;
 
   if (bill && numOfPeople && tipSelected) {
-    alert("btn clicked");
     updateOutput(bill, numOfPeople, tipSelected);
     highlightTip(e.target);
     disableInput();

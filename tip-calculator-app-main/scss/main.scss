@@ -3,6 +3,7 @@
 @import "./abstract/variables";
 @import "./abstract/mixins";
 @import "./components/input";
+@import "./components/button";
 
 body {
   background-color: $body-bg;
@@ -47,18 +48,6 @@ form {
   border-radius: 0.9rem;
   padding: 2rem 1rem 1rem;
 
-  button {
-    background-color: $highlight-2;
-    color: $higlight-1;
-    height: 3rem;
-    border-radius: 0.3rem;
-    width: 100%;
-    border: none;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    cursor: pointer;
-  }
-
   @media screen and (min-width: 48rem) {
     margin-top: 0;
     @include flex-col-opp;
@@ -77,11 +66,6 @@ form {
   @media screen and (min-width: 48rem) {
     margin-bottom: 3rem;
   }
-}
-
-button:hover {
-  background-color: $hover-color;
-  color: $higlight-1;
 }
 
 .icon-input {
