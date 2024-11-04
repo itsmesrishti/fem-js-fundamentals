@@ -52,6 +52,7 @@ form {
     margin-top: 0;
     @include flex-col-opp;
     padding: 2.7rem 2rem 2.3rem;
+    min-height: 26rem;
   }
 }
 
@@ -64,7 +65,7 @@ form {
   }
 
   @media screen and (min-width: 48rem) {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 }
 
