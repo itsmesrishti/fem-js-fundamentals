@@ -12,7 +12,7 @@ h1 {
   overflow-wrap: break-word;
   font-size: 1rem;
   color: $heading-color;
-  letter-spacing: 8px;
+  letter-spacing: 0.5rem
 }
 
 input[type="number"],
@@ -41,4 +41,5 @@ input::placeholder {
 
 footer {
   font-size: .8rem;
+  text-align: center;
 }
