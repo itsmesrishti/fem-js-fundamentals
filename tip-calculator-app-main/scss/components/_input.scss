@@ -7,7 +7,7 @@ legend {
 input[type="number"] {
   background-color: $input-field-color;
   border-radius: 0.3rem;
-  border: 1px solid $input-field-color;
+  border: 2px solid $input-field-color;
   width: 100%;
   height: 3rem;
   margin-top: 0.4rem;
@@ -15,9 +15,18 @@ input[type="number"] {
   text-align: right;
   color: $higlight-1;
   caret-color: $highlight-2;
+  cursor: pointer;
 
   &::placeholder {
     color: $placeholder-color-2;
+  }
+
+  &:focus {
+    outline-color: $highlight-2;
+  }
+
+  &.error {
+    border-color: $error-color;
   }
 }
 
@@ -55,7 +64,7 @@ input[type="radio" i] {
   position: relative;
 }
 
-.error-msg {
+#error-msg {
   color: $error-color;
   position: absolute;
   right: 0;

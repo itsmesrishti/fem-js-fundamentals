@@ -1,12 +1,13 @@
 const tipBtns = document.querySelectorAll(".labels button");
 const calcBtn = document.getElementById("calc-btn");
 const inputCustom = document.getElementById("custom-input");
-const errMsg = document.getElementById("error-msg");
-const inputPeople = document.getElementById("num-people");
 const inputBill = document.getElementById("bill");
-const resetBtn = document.getElementById("reset");
+const inputPeople = document.getElementById("num-people");
 const tipOutput = document.getElementById("tip");
 const totalOutput = document.getElementById("total-amount");
+const allInputs = document.querySelectorAll("input");
+const resetBtn = document.getElementById("reset");
+const errMsg = document.getElementById("error-msg");
 
 const showError = () => {
   errMsg.style.display = "block";
@@ -14,6 +15,7 @@ const showError = () => {
 };
 
 const hideError = () => {
+  alert("hide")
   errMsg.style.display = "none";
   inputPeople.classList.remove("error");
 };
@@ -87,21 +89,19 @@ const enableInput = () => {
   calcBtn.style.display = "none";
 };
 
-const extractNCalc = (e) => {
+const extractInputValues = (e) => {
   const tipSelected = e.target.dataset.tip
     ? e.target.dataset.tip
     : inputCustom.value;
-  const bill = Number(inputBill.value);
+  const bill = inputBill.value;
   const numOfPeople = inputPeople.value;
 
   showAlert(bill, numOfPeople);
 
-  if ((tipSelected, bill, numOfPeople)) {
-    resetBtn.removeAttribute("disabled");
-    resetBtn.style.cursor = "pointer";
+  if (bill && numOfPeople && tipSelected) {
     resetBtn.classList.add("active-btn");
 
-    if (numOfPeople >= "1") {
+    if (Number(numOfPeople)) {
       updateOutput(bill, numOfPeople, tipSelected);
       highlightTip(e.target);
       disableInput();
@@ -109,20 +109,23 @@ const extractNCalc = (e) => {
   }
 };
 
-tipBtns.forEach((btn) => btn.addEventListener("click", extractNCalc));
+tipBtns.forEach((btn) => btn.addEventListener("click", extractInputValues));
 inputCustom.addEventListener("change", () => {
   calcBtn.style.display = "block";
 });
-calcBtn.addEventListener("click", extractNCalc);
+calcBtn.addEventListener("click", extractInputValues);
 
 resetBtn.addEventListener("click", () => {
-  resetBtn.classList.remove("active-btn");
-  hideError();
-
   document.querySelector(".tip-selected").classList.remove("tip-selected");
   tipOutput.innerHTML = "$0.00";
   totalOutput.innerHTML = "$0.00";
-  calcBtn.style.display = "none";
+
+  hideError();
+
+  inputBill.value = "";
+  inputPeople.value = "";
+  inputCustom.value = "";
 
   enableInput();
+  resetBtn.classList.remove("active-btn");
 });
