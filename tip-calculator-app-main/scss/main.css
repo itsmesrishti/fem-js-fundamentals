@@ -204,6 +204,8 @@ body {
 @media screen and (min-width: 64rem) {
   body {
     min-height: 100vh;
+    gap: 0;
+    padding: 0;
   }
 }
 
@@ -216,7 +218,7 @@ main {
 }
 @media screen and (min-width: 90rem) {
   main {
-    gap: 2.5rem;
+    gap: 3.5rem;
   }
 }
 

@@ -13,6 +13,8 @@ body {
 
   @media screen and (min-width: 64rem) {
     min-height: 100vh;
+    gap: 0;
+    padding: 0;
   }
 }
 
@@ -21,7 +23,7 @@ main {
   gap: 1rem;
 
   @media screen and (min-width: 90rem) {
-    gap: 2.5rem;
+    gap: 3.5rem;
   }
 }
 
