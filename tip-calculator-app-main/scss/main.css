@@ -218,8 +218,8 @@ main {
 }
 @media screen and (min-width: 90rem) {
   main {
-    gap: 3.5rem;
-    margin-top: -2.5rem;
+    gap: 4rem;
+    margin-top: -2.7rem;
   }
 }
 
