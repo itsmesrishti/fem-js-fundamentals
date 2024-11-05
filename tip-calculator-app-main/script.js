@@ -91,12 +91,12 @@ const extractNCalc = (e) => {
   const tipSelected = e.target.dataset.tip
     ? e.target.dataset.tip
     : inputCustom.value;
-  const bill = Number(inputBill.value);
+  const bill = inputBill.value;
   const numOfPeople = inputPeople.value;
 
   showAlert(bill, numOfPeople);
 
-  if ((tipSelected, bill, numOfPeople)) {
+  if (tipSelected, bill, numOfPeople) {
     resetBtn.removeAttribute("disabled");
     resetBtn.style.cursor = "pointer";
     resetBtn.classList.add("active-btn");
