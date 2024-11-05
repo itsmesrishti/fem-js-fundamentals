@@ -12,7 +12,7 @@ body {
   padding: 1rem 0;
 
   @media screen and (min-width: 64rem) {
-    min-height: 100vh;
+    height: 100vh;
     gap: 0;
     padding: 0;
   }
@@ -40,6 +40,7 @@ form {
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
     border-radius: 1.5rem;
+    box-shadow: 0 2rem 2.5rem 0 rgba(79, 165, 175, 0.2);
   }
 }
 
