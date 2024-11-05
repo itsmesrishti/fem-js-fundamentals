@@ -24,6 +24,7 @@ main {
 
   @media screen and (min-width: 90rem) {
     gap: 3.5rem;
+    margin-top: -1rem;
   }
 }
 
@@ -77,7 +78,7 @@ form {
 }
 
 svg {
-  width: .8rem;
+  width: 0.8rem;
   fill: $icon-color;
   position: absolute;
   top: 1.3rem;
