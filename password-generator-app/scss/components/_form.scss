@@ -1,0 +1,86 @@
+.field {
+  background-color: $alt-color;
+  padding: 1rem;
+
+  &:first-of-type {
+    margin-bottom: 1rem;
+    @include flex-center-spacebw;
+  }
+
+  @media screen and (min-width: 38rem) {
+    padding: 1.1rem 2rem 1.75rem;
+
+    &:first-of-type {
+      margin-bottom: 1.45rem;
+    }
+  }
+}
+
+form {
+  width: 90%;
+  max-width: 37.5rem;
+}
+
+.copy-sec {
+  @include flex-center-align;
+  gap: 0.7rem;
+
+  #copy-msg {
+    display: none;
+  }
+}
+
+.strength-section {
+  background-color: $bg-color;
+  padding: 0.88rem 1.2rem;
+  text-transform: uppercase;
+  @include flex-center-spacebw;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  @media screen and (min-width: 38rem) {
+    padding: 1.38rem 2rem;
+    margin-top: 2rem;
+  }
+}
+
+#strength {
+  color: $main-font-color;
+  display: none;
+}
+
+.strength-indicator {
+  @include flex-center-align;
+  gap: 1rem;
+}
+
+.bars {
+  @include flex-center-align;
+  gap: 0.5rem;
+
+  .bar {
+    width: 0.7rem;
+    height: 1.75rem;
+    border: 2px solid $main-font-color;
+
+    &.strength-1 {
+      background-color: $highlight-2;
+      border: none;
+    }
+
+    &.strength-2 {
+      background-color: $highlight-3;
+      border: none;
+    }
+
+    &.strength-3 {
+      background-color: $highlight-4;
+      border: none;
+    }
+
+    &.strength-4 {
+      background-color: $main-highlight;
+      border: none;
+    }
+  }
+}

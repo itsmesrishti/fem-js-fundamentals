@@ -1,0 +1,51 @@
+@import "../abstract/mixins";
+@import "../abstract/variables";
+
+@font-face {
+  font-family: "JetBrainsMono";
+  src: url("../../assets/fonts/static/JetBrainsMono-Bold.ttf");
+}
+
+h1 {
+  @include heading-medium;
+  color: $alt-font-color;
+}
+
+#copy-msg {
+  color: $main-highlight;
+  text-transform: uppercase;
+}
+
+button {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: "JetBrainsMono", sans-serif;
+}
+
+#char-length {
+  color: $main-highlight;
+  @include heading-medium;
+
+  @media screen and (min-width: 38rem) {
+    @include heading-large;
+  }
+}
+
+.strength-section {
+  color: $alt-font-color;
+  font-size: 1rem;
+  line-height: auto;
+
+  @media screen and (min-width: 38rem) {
+    @include body;
+  }
+}
+
+#strength {
+  color: $main-font-color;
+  @include body;
+
+  @media screen and (min-width: 38rem) {
+    @include heading-medium;
+  }
+}

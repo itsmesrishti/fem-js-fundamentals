@@ -1,0 +1,41 @@
+input[type="range"] {
+  display: block;
+  width: 100%;
+  height: 2rem;
+  background: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  margin: .9rem 0 1rem;
+  width: 100%;
+  overflow: hidden;
+
+  @media screen and (min-width: 38rem) {
+    margin-bottom: 1.7rem;
+  }
+
+  /* For Safari and Chrome */
+  &::-webkit-slider-runnable-track {
+    height: 8px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background-color: $main-font-color;
+    margin-top: -0.7rem;
+    cursor: pointer;
+    border-image: linear-gradient(90deg, $main-highlight 50%, $bg-color 0) 0 1 /
+      calc(50% - (8px / 2)) 100vw/0 100vw;
+  }
+
+  &:focus::-webkit-slider-thumb {
+    background: $bg-color;
+    box-shadow: 0 0 0 2px inset $main-highlight;
+    border-image: linear-gradient(90deg, $main-highlight 50%, $bg-color 0) 0 1 /
+      calc(50% - (8px / 2)) 100vw/0 100vw;
+  }
+}

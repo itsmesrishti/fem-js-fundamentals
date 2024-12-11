@@ -1,0 +1,64 @@
+input[type="text"] {
+  background-color: transparent;
+  border: none;
+  @include heading-medium;
+  @include font;
+  width: 88%;
+
+  &::placeholder {
+    color: $alt-font-color;
+    opacity: 0.25;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  @media screen and (min-width: 38rem) {
+    width: 92%;
+    @include heading-large;
+  }
+}
+
+.password-features {
+  label {
+    display: block;
+    margin-bottom: 1rem;
+    @include flex-center-align;
+    cursor: pointer;
+
+    @media screen and (min-width: 38rem) {
+      margin-bottom: 1.3rem;
+    }
+  }
+
+  input[type="checkbox"] {
+    appearance: none;
+    margin-right: 1.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    border: 2px solid $main-font-color;
+    @include flex-center-center;
+
+    &:checked {
+      background-color: $main-highlight;
+      border: none;
+
+      &::after {
+        content: "";
+        background-image: url("../../assets/images/icon-check.svg");
+        display: block;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+    }
+
+    &:hover {
+      border-color: $main-highlight;
+    }
+  }
+}

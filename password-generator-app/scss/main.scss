@@ -2,3 +2,45 @@
 @import "./base/typography";
 @import "./abstract/mixins";
 @import "./abstract/variables";
+@import "./components/input";
+@import "./components/slider";
+@import "./components/form";
+@import "./components/button";
+
+body {
+  @include font;
+  background-color: $bg-color;
+  color: $main-font-color;
+  @include flex-center-center;
+  min-height: 100vh;
+
+  @media screen and (min-width: 38rem) {
+    padding: 2rem 0;
+  }
+}
+
+main {
+  @include flex-center-center;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media screen and (min-width: 38rem) {
+    gap: 1.95rem;
+  }
+}
+
+.icon {
+  cursor: pointer;
+  width: 1rem;
+  height: auto;
+
+  @media screen and (min-width: 38rem) {
+    width: 1.3rem;
+  }
+}
+
+.flex-spacebw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
