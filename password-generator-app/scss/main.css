@@ -206,7 +206,7 @@ input[type=range]:focus::-webkit-slider-thumb {
 }
 @media screen and (min-width: 38rem) {
   .field {
-    padding: 1.1rem 2rem 1.75rem;
+    padding: 1.1rem 2rem 1.2rem;
   }
   .field:first-of-type {
     margin-bottom: 1.45rem;
