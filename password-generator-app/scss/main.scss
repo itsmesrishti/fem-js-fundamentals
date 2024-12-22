@@ -18,6 +18,10 @@ body {
   @media screen and (min-width: 38rem) {
     padding: 0;
   }
+
+  @media screen and (max-height: 46rem) {
+    padding: 2rem 0;
+  }
 }
 
 main {
