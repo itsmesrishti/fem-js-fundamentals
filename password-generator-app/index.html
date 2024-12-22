@@ -8,6 +8,7 @@
   
   <title>Frontend Mentor | Password generator app</title>
   <link rel="stylesheet" href="/scss/main.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -15,10 +16,10 @@
     <h1>Password Generator</h1>
     <form>
       <div class="field">
-        <input type="text" placeholder="P4$5W0rD!" disabled>
+        <input id="password" type="text" placeholder="P4$5W0rD!" disabled>
         <div class="copy-sec">
           <p id="copy-msg">copied</p>
-          <img src="/assets/images/icon-copy.svg" alt="copy" class="icon">
+          <img src="/assets/images/icon-copy.svg" alt="copy" class="icon" id="copy">
         </div>
       </div>
       <div class="field">
@@ -28,10 +29,10 @@
         </div>
         <input type="range" id="slider" min="0" max="20" value="0">
         <div class="password-features">
-          <label for="uppercase"><input type="checkbox" id="uppercase">Include Uppercase Letters</label>
-          <label for="lowercase"><input type="checkbox" id="lowercase">Include Lowercase Letters</input></label>
-          <label for="numbers"><input type="checkbox" id="numbers">Include Numbers</input></label>
-          <label for="symbols"><input type="checkbox" id="symbols">Include Symbols</label>
+          <label for="uppercase"><input type="checkbox" id="uppercase" value="uppercase">Include Uppercase Letters</label>
+          <label for="lowercase"><input type="checkbox" id="lowercase" value="lowercase">Include Lowercase Letters</input></label>
+          <label for="numbers"><input type="checkbox" id="numbers" value="numbers">Include Numbers</input></label>
+          <label for="symbols"><input type="checkbox" id="symbols" value="symbols">Include Symbols</label>
         </div>
         <div class="strength-section">
           <p>Strength</p>

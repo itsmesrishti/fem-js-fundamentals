@@ -4,6 +4,7 @@ input[type="text"] {
   @include heading-medium;
   @include font;
   width: 88%;
+  color: $main-font-color;
 
   &::placeholder {
     color: $alt-font-color;

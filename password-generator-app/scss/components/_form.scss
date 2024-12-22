@@ -24,10 +24,10 @@ form {
 .copy-sec {
   @include flex-center-align;
   gap: 0.7rem;
+}
 
-  #copy-msg {
-    display: none;
-  }
+#copy-msg {
+  display: none;
 }
 
 .strength-section {
@@ -63,22 +63,22 @@ form {
     height: 1.75rem;
     border: 2px solid $main-font-color;
 
-    &.strength-1 {
+    &.too-weak {
       background-color: $highlight-2;
       border: none;
     }
 
-    &.strength-2 {
+    &.weak {
       background-color: $highlight-3;
       border: none;
     }
 
-    &.strength-3 {
+    &.medium {
       background-color: $highlight-4;
       border: none;
     }
 
-    &.strength-4 {
+    &.strong {
       background-color: $main-highlight;
       border: none;
     }

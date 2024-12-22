@@ -44,6 +44,7 @@ button {
 #strength {
   color: $main-font-color;
   @include body;
+  text-transform: uppercase;
 
   @media screen and (min-width: 38rem) {
     @include heading-medium;

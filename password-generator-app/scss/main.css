@@ -65,6 +65,7 @@ button {
   color: #E6E5EA;
   font-size: 1.2rem;
   line-height: 1.4rem;
+  text-transform: uppercase;
 }
 @media screen and (min-width: 38rem) {
   #strength {
@@ -86,6 +87,7 @@ input[type=text] {
   line-height: normal;
   font-family: "JetBrainsMono", monospace;
   width: 88%;
+  color: #E6E5EA;
 }
 @media screen and (min-width: 38rem) {
   input[type=text] {
@@ -223,7 +225,8 @@ form {
   align-items: center;
   gap: 0.7rem;
 }
-.copy-sec #copy-msg {
+
+#copy-msg {
   display: none;
 }
 
@@ -265,19 +268,19 @@ form {
   height: 1.75rem;
   border: 2px solid #E6E5EA;
 }
-.bars .bar.strength-1 {
+.bars .bar.too-weak {
   background-color: #F64A4A;
   border: none;
 }
-.bars .bar.strength-2 {
+.bars .bar.weak {
   background-color: #FB7C58;
   border: none;
 }
-.bars .bar.strength-3 {
+.bars .bar.medium {
   background-color: #F8CD65;
   border: none;
 }
-.bars .bar.strength-4 {
+.bars .bar.strong {
   background-color: #A4FFAF;
   border: none;
 }
