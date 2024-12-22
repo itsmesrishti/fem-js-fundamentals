@@ -11,6 +11,13 @@ h1 {
   color: $alt-font-color;
 }
 
+label {
+  font-size: 1rem;
+  @media screen and (min-width: 38rem) {
+    @include body;
+  }
+}
+
 #copy-msg {
   color: $main-highlight;
   text-transform: uppercase;

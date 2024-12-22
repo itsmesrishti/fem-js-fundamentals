@@ -13,10 +13,7 @@ body {
   color: $main-font-color;
   @include flex-center-center;
   min-height: 100vh;
-
-  @media screen and (min-width: 38rem) {
-    padding: 2rem 0;
-  }
+  padding: 2rem 0;
 }
 
 main {

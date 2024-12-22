@@ -20,6 +20,16 @@ h1 {
   }
 }
 
+label {
+  font-size: 1rem;
+}
+@media screen and (min-width: 38rem) {
+  label {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
+
 #copy-msg {
   color: #A4FFAF;
   text-transform: uppercase;
@@ -314,11 +324,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-}
-@media screen and (min-width: 38rem) {
-  body {
-    padding: 2rem 0;
-  }
+  padding: 2rem 0;
 }
 
 main {
