@@ -226,8 +226,7 @@ input[type=range]:focus::-webkit-slider-thumb {
 }
 
 form {
-  width: 90%;
-  max-width: 37.5rem;
+  max-width: 33.75rem;
 }
 
 .copy-sec {
@@ -324,7 +323,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
 }
 
 main {
