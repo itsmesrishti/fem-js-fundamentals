@@ -2,3 +2,100 @@
 @import "base/typography";
 @import "abstract/mixins";
 @import "abstract/variables";
+@import "layout/header";
+@import "components/toggle";
+
+.quiz-screen,
+.result-screen {
+  display: none;
+}
+
+body {
+  background-image: url("/assets/images/pattern-background-mobile-dark.svg");
+  background-repeat: no-repeat;
+  background-color: $dark-theme-bg;
+  color: $dark-theme-font;
+  @include flex-center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+
+  @media screen and (min-width: 48rem) {
+    background-image: url("/assets/images/pattern-background-tablet-dark.svg");
+  }
+
+  @media screen and (min-width: 64rem) {
+    background-image: url("/assets/images/pattern-background-desktop-dark.svg");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+header {
+  padding: 1rem 1.5rem;
+
+  @media screen and (min-width: 48rem) {
+    padding: 2rem 2.5rem;
+  }
+}
+
+main {
+  width: 100%;
+  padding: 2rem 1.5rem;
+
+  @media screen and (min-width: 48rem) {
+    padding: 3rem 2.5rem;
+  }
+
+  @media screen and (min-width: 64rem) {
+    @include flex-center;
+    justify-content: space-between;
+
+    & > section {
+        width: 50%;
+    }
+  }
+}
+
+.title-widget {
+  margin-bottom: 2.5rem;
+
+  @media screen and (min-width: 48rem) {
+    margin-bottom: 4rem;
+  }
+}
+
+.category {
+  display: block;
+  background-color: $dark-theme-category;
+  width: 100%;
+  height: 64px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: none;
+  color: $dark-theme-font;
+  @include flex-center;
+  gap: 1rem;
+  padding: 0.8rem;
+
+  div {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    @include flex-center;
+    justify-content: center;
+  }
+}
+
+#html {
+  background-color: $html-color;
+}
+#css {
+  background-color: $css-color;
+}
+#javascript {
+  background-color: $js-color;
+}
+#accessibility {
+  background-color: $acc-color;
+}

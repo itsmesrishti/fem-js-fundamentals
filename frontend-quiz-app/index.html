@@ -1,48 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Frontend quiz app</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Frontend quiz app</title>
 
-  <!-- Quiz menu start -->
+    <link rel="stylesheet" href="/assets/scss/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="category"><div id="html">
+        <img src="/assets/images/icon-html.svg" alt="html" width="30" />
+      </div>
+      HTML</div>
+      <div class="toggle-sec">
+        <img
+          src="/assets/images/icon-sun-dark.svg"
+          alt="sun"
+          width="16"
+          height="16"
+        />
+        <label
+          ><input type="checkbox" id="toggle" />
+          <span class="toggle-view"></span>
+        </label>
+        <img
+          src="/assets/images/icon-moon-dark.svg"
+          alt="moon"
+          width="16"
+          height="16"
+        />
+      </div>
+    </header>
+    <main>
+      <section class="title-widget">
+        <h1>Welcome to the <span>Frontend Quiz!</span></h1>
+        <p id="subheading">Pick a subject to get started.</p>
+      </section>
+      <section class="initial-screen">
+        <div class="subjects">
+          <button class="category">
+            <div id="html">
+              <img src="/assets/images/icon-html.svg" alt="html" width="30" />
+            </div>
+            HTML
+          </button>
+          <button class="category">
+            <div id="css">
+              <img src="/assets/images/icon-css.svg" alt="css" width="30" />
+            </div>
+            CSS
+          </button>
+          <button class="category">
+            <div id="javascript">
+              <img
+                src="/assets/images/icon-js.svg"
+                alt="javascript"
+                width="30"
+              />
+            </div>
+            JavaScript
+          </button>
+          <button class="category">
+            <div id="accessibility">
+              <img
+                src="/assets/images/icon-accessibility.svg"
+                alt="accessibility"
+                width="30"
+              />
+            </div>
+            Accessibility
+          </button>
+        </div>
+      </section>
 
-  Welcome to the Frontend Quiz!
-  Pick a subject to get started.
+      <div class="quiz-screen">
+        <p>Question x of 10</p>
+        <p>question</p>
+        <label><input type="radio" name="option" />A</label>
+        <label><input type="radio" name="option" />B</label>
+        <label><input type="radio" name="option" />C</label>
+        <label><input type="radio" name="option" />D</label>
+        <button type="button">Submit answer</button>
+      </div>
 
-  HTML
-  CSS
-  JavaScript
-  Accessibility
-
-  <!-- Quiz menu end -->
-
-  <!-- Quiz question start -->
-
-  Question <!-- number --> of 10
-
-  A
-  B
-  C
-  D
-
-  Submit answer
-
-  <!-- Quiz question end -->
-
-  <!-- Quiz completed start -->
-
-  Quiz completed
-  You scored...
-
-  <!-- score --> out of 10
-
-  <!-- Quiz completed end -->
-
-</body>
+      <div class="result-screen">
+        <div>subject</div>
+        <div class="result-card">x out of 10</div>
+        <button type="button">Play Again</button>
+      </div>
+    </main>
+  </body>
 </html>

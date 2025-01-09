@@ -1,0 +1,36 @@
+@import "../abstract/variables";
+
+#toggle {
+    height: 0;
+    width: 0;
+    position: absolute;
+}
+.toggle-view {
+    display: block;
+    width: 2rem;
+    height: 1.2rem;
+    border-radius: 20px;
+    background-color: $toggle-color;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+        content: "";
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: $dark-theme-font;
+        position: absolute;
+        border-radius: 50%;
+        top: 2.3px;
+        right: 5px;
+    }
+}
+.toggle-sec {
+    @include flex-center;
+    gap: 5px;
+
+    &:has(#toggle:checked) .toggle-view::before {
+        right: auto;
+        left: 5px;
+    }
+}
