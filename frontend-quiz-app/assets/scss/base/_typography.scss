@@ -7,28 +7,89 @@
     url("/assets/fonts/Rubik-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
+// mixins
+@mixin heading-large-bold {
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+@mixin heading-large-regular {
+  font-size: 4rem;
+}
+
+@mixin heading-medium {
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+@mixin heading-small {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+
+@mixin body-medium {
+  font-size: 1.5rem;
+  line-height: 150%;
+}
+
+@mixin body-small {
+  font-size: 1.25rem;
+  line-height: 150%;
+  font-style: italic;
+}
+
+// styles
 body, button {
   font-family: "Rubik", sans-serif;
 }
 
+html {
+  font-size: 1rem;
+  
+  @media screen and (max-height: 36.6rem) and (orientation: landscape) {
+    font-size: 0.8rem;
+  }
+}
+
 h1 {
   font-weight: 300;
-  font-size: 40px;
+  font-size: 2.5rem;
 
   span {
     font-weight: 500;
+    display: block;
+  }
+
+  @media screen and (min-width: 48rem) {
+    @include heading-large-regular;
+
+    span {
+      @include heading-large-bold;
+    }
   }
 }
 
 #subheading {
   color: $dark-theme-font-alt;
   font-style: italic;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 150%;
   margin-top: 1rem;
+
+  @media screen and (min-width: 48rem) {
+    @include body-small;
+  }
+
+  @media screen and (min-width: 64rem) {
+    margin-top: 3rem;
+  }
 }
 
 .category {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
+
+  @media screen and (min-width: 48rem) {
+    @include heading-small;
+  }
 }

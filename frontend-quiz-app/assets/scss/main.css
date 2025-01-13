@@ -12,25 +12,62 @@ body, button {
   font-family: "Rubik", sans-serif;
 }
 
+html {
+  font-size: 1rem;
+}
+@media screen and (max-height: 36.6rem) and (orientation: landscape) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+
 h1 {
   font-weight: 300;
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 h1 span {
   font-weight: 500;
+  display: block;
+}
+@media screen and (min-width: 48rem) {
+  h1 {
+    font-size: 4rem;
+  }
+  h1 span {
+    font-size: 4rem;
+    font-weight: 500;
+  }
 }
 
 #subheading {
   color: #ABC1E1;
   font-style: italic;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 150%;
   margin-top: 1rem;
 }
+@media screen and (min-width: 48rem) {
+  #subheading {
+    font-size: 1.25rem;
+    line-height: 150%;
+    font-style: italic;
+  }
+}
+@media screen and (min-width: 64rem) {
+  #subheading {
+    margin-top: 3rem;
+  }
+}
 
 .category {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
+}
+@media screen and (min-width: 48rem) {
+  .category {
+    font-size: 1.75rem;
+    font-weight: 500;
+  }
 }
 
 header {
@@ -68,7 +105,7 @@ header .category {
   background-color: #fff;
   position: absolute;
   border-radius: 50%;
-  top: 2.3px;
+  top: 2.5px;
   right: 5px;
 }
 
@@ -132,7 +169,7 @@ main {
 @media screen and (min-width: 64rem) {
   main {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
   }
   main > section {
@@ -153,9 +190,9 @@ main {
   display: block;
   background-color: #3B4D66;
   width: 100%;
-  height: 64px;
-  margin-bottom: 12px;
-  border-radius: 12px;
+  height: 4rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.75rem;
   border: none;
   color: #fff;
   display: flex;
@@ -164,12 +201,29 @@ main {
   padding: 0.8rem;
 }
 .category div {
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media screen and (min-width: 48rem) {
+  .category {
+    height: 5rem;
+    margin-bottom: 1.5rem;
+    gap: 2rem;
+  }
+  .category div {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .category {
+    height: 5.75rem;
+    padding: 1.25rem;
+  }
 }
 
 #html {
