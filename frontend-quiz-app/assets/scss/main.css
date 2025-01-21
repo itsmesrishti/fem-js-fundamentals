@@ -140,13 +140,14 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 header .category {
   background-color: transparent;
   padding: 0;
   height: unset;
   margin-bottom: unset;
+  text-transform: capitalize;
 }
 
 body:has(#toggle:checked) header .category {
@@ -277,19 +278,19 @@ body:has(#toggle:checked) header .category {
   }
 }
 
-#html {
+#html .option {
   background-color: #FFF1E9;
 }
 
-#css {
+#css .option {
   background-color: #E0FDEF;
 }
 
-#javascript {
+#javascript .option {
   background-color: #EBF0FF;
 }
 
-#accessibility {
+#accessibility .option {
   background-color: #F6E7FF;
 }
 
