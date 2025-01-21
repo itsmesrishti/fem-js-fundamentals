@@ -1,0 +1,46 @@
+input[type="radio"] {
+  display: none;
+}
+
+.category:has(input[type="radio"]:checked) {
+  outline: 3px solid $primary-highlight;
+
+  .option {
+    background-color: $primary-highlight;
+    color: $common-light;
+  }
+}
+
+// correct answer
+.category.correct-ans-selected {
+  outline: 3px solid $success-state;
+
+  .option {
+    background-color: $success-state;
+    color: $common-light;
+  }
+}
+
+.correct-ans::after {
+  content: url("/assets/images/icon-correct.svg");
+  display: block;
+  position: absolute;
+  right: 0.7rem;
+}
+
+.category.wrong-ans-selected {
+  outline: 3px solid $error-state;
+
+  .option {
+    background-color: $error-state;
+    color: $common-light;
+  }
+
+  &::after {
+    content: url("/assets/images/icon-incorrect.svg");
+    display: block;
+    position: absolute;
+    right: 0.7rem;
+    top: 0.75rem;
+  }
+}

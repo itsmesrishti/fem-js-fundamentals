@@ -1,10 +1,18 @@
 // dark theme
-$dark-theme-bg: #313E51;
-$dark-theme-font: #fff;
-$dark-theme-font-alt : #ABC1E1;
+$common-light-alt : #ABC1E1;
 $dark-theme-category: #3B4D66;
-$toggle-color: #A729F5;
 $html-color: #FFF1E9;
 $css-color: #E0FDEF;
 $js-color: #EBF0FF;
 $acc-color: #F6E7FF;
+
+// light theme
+$light-theme-primary: #F4F6FA;
+
+// common colors
+$option-font: #626C7F;
+$primary-highlight: #A729F5;
+$success-state: #26D782;
+$error-state: #EE5454;
+$common-light: #fff;
+$common-dark: #313E51;

@@ -1,12 +1,13 @@
 header {
-    width: 100%;
-    @include flex-center;
-    justify-content: space-between;
+  width: 100%;
+  @include flex-center;
+  justify-content: space-between;
 
-    .category {
-        background-color: transparent;
-        padding: 0;
-        height: unset;
-        margin-bottom: unset;
-    }
+  .category {
+    @include hide-category-style;
+  }
+}
+
+body:has(#toggle:checked) header .category {
+  @include hide-category-style;
 }

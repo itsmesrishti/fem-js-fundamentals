@@ -13,53 +13,46 @@
     <title>Frontend Mentor | Frontend quiz app</title>
 
     <link rel="stylesheet" href="/assets/scss/main.css" />
+
+    <!-- <script src="/script.js" defer></script> -->
   </head>
   <body>
     <header>
-      <div class="category"><div id="html">
-        <img src="/assets/images/icon-html.svg" alt="html" width="30" />
+      <div class="category">
+        <div id="html" class="option">
+          <img src="/assets/images/icon-html.svg" alt="html" width="30" />
+        </div>
+        HTML
       </div>
-      HTML</div>
       <div class="toggle-sec">
-        <img
-          src="/assets/images/icon-sun-dark.svg"
-          alt="sun"
-          width="16"
-          height="16"
-        />
         <label
           ><input type="checkbox" id="toggle" />
           <span class="toggle-view"></span>
         </label>
-        <img
-          src="/assets/images/icon-moon-dark.svg"
-          alt="moon"
-          width="16"
-          height="16"
-        />
       </div>
     </header>
     <main>
       <section class="title-widget">
         <h1>Welcome to the <span>Frontend Quiz!</span></h1>
-        <p id="subheading">Pick a subject to get started.</p>
+        <p>Pick a subject to get started.</p>
       </section>
+
       <section class="initial-screen">
         <div class="subjects">
           <button class="category">
-            <div id="html">
+            <div id="html" class="option">
               <img src="/assets/images/icon-html.svg" alt="html" width="30" />
             </div>
             HTML
           </button>
           <button class="category">
-            <div id="css">
+            <div id="css" class="option">
               <img src="/assets/images/icon-css.svg" alt="css" width="30" />
             </div>
             CSS
           </button>
           <button class="category">
-            <div id="javascript">
+            <div id="javascript" class="option">
               <img
                 src="/assets/images/icon-js.svg"
                 alt="javascript"
@@ -69,7 +62,7 @@
             JavaScript
           </button>
           <button class="category">
-            <div id="accessibility">
+            <div id="accessibility" class="option">
               <img
                 src="/assets/images/icon-accessibility.svg"
                 alt="accessibility"
@@ -82,19 +75,49 @@
       </section>
 
       <div class="quiz-screen">
-        <p>Question x of 10</p>
-        <p>question</p>
-        <label><input type="radio" name="option" />A</label>
-        <label><input type="radio" name="option" />B</label>
-        <label><input type="radio" name="option" />C</label>
-        <label><input type="radio" name="option" />D</label>
-        <button type="button">Submit answer</button>
+        <div class="ques-group">
+          <p class="ques-num">Question<span id="ques-num"> 6 </span>of 10</p>
+          <p id="question">
+            Which of these color contrast ratios defines the minimum WCAG 2.1
+            Level AA requirement for normal text?
+          </p>
+        </div>
+        <div class="ans-group">
+          <label class="category"
+            ><input type="radio" name="option" /><span class="option">A</span
+            >4.5 : 1</label
+          >
+          <label class="category"
+            ><input type="radio" name="option" /><span class="option">B</span>3
+            : 1</label
+          >
+          <label class="category"
+            ><input type="radio" name="option" /><span class="option">C</span
+            >2.5 : 1</label
+          >
+          <label class="category"
+            ><input type="radio" name="option" /><span class="option">D</span>5
+            : 1</label
+          >
+          <button type="button" class="primary-btn">Submit answer</button>
+          <span id="err-msg"
+            ><img src="/assets/images/icon-incorrect.svg" alt="error" />Please
+            select an answer</span
+          >
+        </div>
       </div>
 
       <div class="result-screen">
-        <div>subject</div>
-        <div class="result-card">x out of 10</div>
-        <button type="button">Play Again</button>
+        <div class="result-card">
+          <div class="category">
+            <div id="html" class="option">
+              <img src="/assets/images/icon-html.svg" alt="html" width="30" />
+            </div>
+            HTML
+          </div>
+          <p><span id="score">8</span> out of 10</p>
+        </div>
+        <button type="button" class="primary-btn">Play Again</button>
       </div>
     </main>
   </body>

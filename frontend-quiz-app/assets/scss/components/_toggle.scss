@@ -1,36 +1,80 @@
 @import "../abstract/variables";
 
 #toggle {
-    height: 0;
-    width: 0;
-    position: absolute;
+  height: 0;
+  width: 0;
+  position: absolute;
 }
+
 .toggle-view {
-    display: block;
-    width: 2rem;
-    height: 1.2rem;
-    border-radius: 20px;
-    background-color: $toggle-color;
-    cursor: pointer;
-    position: relative;
+  display: block;
+  width: 2rem;
+  height: 1.2rem;
+  border-radius: 20px;
+  background-color: $primary-highlight;
+  cursor: pointer;
+  position: relative;
 
-    &::before {
-        content: "";
-        width: 0.8rem;
-        height: 0.8rem;
-        background-color: $dark-theme-font;
-        position: absolute;
-        border-radius: 50%;
-        top: 2.5px;
-        right: 5px;
+  &::before {
+    content: "";
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: $common-light;
+    position: absolute;
+    border-radius: 50%;
+    top: 0.17rem;
+    right: 0.2rem;
+
+    @media screen and (min-width: 48rem) {
+      width: 1.2rem;
+      height: 1.2rem;
+      top: 0.23rem;
+      right: 0.3rem;
     }
+  }
+
+  @media screen and (min-width: 48rem) {
+    width: 3rem;
+    height: 1.75rem;
+  }
 }
-.toggle-sec {
-    @include flex-center;
-    gap: 5px;
 
-    &:has(#toggle:checked) .toggle-view::before {
-        right: auto;
-        left: 5px;
+.toggle-sec {
+  @include flex-center;
+  gap: 0.5rem;
+
+  &::after {
+    content: url("/assets/images/icon-moon-light.svg");
+  }
+
+  &::before {
+    content: url("/assets/images/icon-sun-light.svg");
+  }
+
+  &::after, &::before {
+    @include toggle-img-style;
+  }
+
+  &:has(#toggle:checked) {
+    .toggle-view::before {
+      right: auto;
+      left: 0.2rem;
+  
+      @media screen and (min-width: 48rem) {
+        left: 0.3rem;
+      }
     }
+
+    &::after {
+      content: url("/assets/images/icon-moon-dark.svg");
+    }
+  
+    &::before {
+      content: url("/assets/images/icon-sun-dark.svg");
+    }
+  }
+
+  @media screen and (min-width: 48rem) {
+    gap: 1rem;
+  }
 }

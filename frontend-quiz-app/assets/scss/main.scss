@@ -4,6 +4,9 @@
 @import "abstract/variables";
 @import "layout/header";
 @import "components/toggle";
+@import "components/category";
+@import "components/radio-input";
+@import "components/button";
 
 .quiz-screen,
 .result-screen {
@@ -13,21 +16,35 @@
 body {
   background-image: url("/assets/images/pattern-background-mobile-dark.svg");
   background-repeat: no-repeat;
-  background-color: $dark-theme-bg;
-  color: $dark-theme-font;
+  background-color: $common-dark;
+  color: $common-light;
   @include flex-center;
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
 
+  &:has(#toggle:checked) {
+    background-color: $light-theme-primary;
+    background-image: url("/assets/images/pattern-background-mobile-light.svg");
+    color: $common-dark;
+  }
+
   @media screen and (min-width: 48rem) {
     background-image: url("/assets/images/pattern-background-tablet-dark.svg");
+
+    &:has(#toggle:checked) {
+      background-image: url("/assets/images/pattern-background-tablet-light.svg");
+    }
   }
 
   @media screen and (min-width: 64rem) {
     background-image: url("/assets/images/pattern-background-desktop-dark.svg");
     background-position: center;
     background-size: cover;
+
+    &:has(#toggle:checked) {
+      background-image: url("/assets/images/pattern-background-desktop-light.svg");
+    }
   }
 }
 
@@ -35,7 +52,7 @@ header {
   padding: 1rem 1.5rem;
 
   @media screen and (min-width: 48rem) {
-    padding: 2rem 2.5rem;
+    padding: 2rem 5.7rem;
   }
 }
 
@@ -44,7 +61,7 @@ main {
   padding: 2rem 1.5rem;
 
   @media screen and (min-width: 48rem) {
-    padding: 3rem 2.5rem;
+    padding: 2rem 5.7rem;
   }
 
   @media screen and (min-width: 64rem) {
@@ -53,7 +70,8 @@ main {
     justify-content: space-between;
 
     & > section {
-        width: 50%;
+      width: 50%;
+      max-width: 35.25rem;
     }
   }
 }
@@ -66,53 +84,95 @@ main {
   }
 }
 
-.category {
-  display: block;
-  background-color: $dark-theme-category;
-  width: 100%;
-  height: 4rem;
-  margin-bottom: 0.75rem;
-  border-radius: 0.75rem;
-  border: none;
-  color: $dark-theme-font;
-  @include flex-center;
-  gap: 1rem;
-  padding: 0.8rem;
+// quiz screen
+.ques-num {
+  margin-top: 0;
+}
 
-  div {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    @include flex-center;
-    justify-content: center;
-  }
+#err-msg {
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.75rem;
+  gap: 0.5rem;
+  display: none;
 
   @media screen and (min-width: 48rem) {
-    height: 5rem;
-    margin-bottom: 1.5rem;
-    gap: 2rem;
+    margin-top: 2rem;
+  }
+}
 
-    div {
-      width: 3.5rem;
-      height: 3.5rem;
+// result screen
+.result-screen {
+  .category {
+    @include hide-category-style;
+  }
+
+  .result-card {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    background-color: $dark-theme-category;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 0.75rem;
+
+    @media screen and (min-width: 48rem) {
+      margin-bottom: 2rem;
+      padding: 3rem;
     }
   }
 
+  p {
+    font-style: normal;
+
+    @media screen and (min-width: 48rem) {
+      margin-top: 2.5rem;
+    }
+  }
+
+  #score {
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+
   @media screen and (min-width: 64rem) {
-    height: 5.75rem;
-    padding: 1.25rem;
+    width: 50%;
+    max-width: 35.25rem;
   }
 }
 
-#html {
-  background-color: $html-color;
+// change styles based on toggle state
+body:has(#toggle:checked) {
+  .result-screen {
+    .category {
+      @include hide-category-style;
+    }
+
+    .result-card {
+      background-color: $common-light;
+    }
+  }
 }
-#css {
-  background-color: $css-color;
+
+// media queries
+@media screen and (min-width: 48rem) {
+  .ques-group {
+    margin-bottom: 4rem;
+  }
 }
-#javascript {
-  background-color: $js-color;
+
+@media screen and (min-width: 64rem) {
+  .quiz-screen {
+    width: 100%;
+    // display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    gap: 2rem;
+  }
 }
-#accessibility {
-  background-color: $acc-color;
+
+@media screen and (min-width: 90rem) {
+  .quiz-screen {
+    grid-template-columns: 29rem 35.25rem;
+  }
 }

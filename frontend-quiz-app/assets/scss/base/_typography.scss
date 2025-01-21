@@ -46,8 +46,8 @@ body, button {
 html {
   font-size: 1rem;
   
-  @media screen and (max-height: 36.6rem) and (orientation: landscape) {
-    font-size: 0.8rem;
+  @media screen and (max-height: 41.5rem) and (orientation: landscape) {
+    font-size: 0.7rem;
   }
 }
 
@@ -69,8 +69,8 @@ h1 {
   }
 }
 
-#subheading {
-  color: $dark-theme-font-alt;
+p {
+  color: $common-light-alt;
   font-style: italic;
   font-size: 0.875rem;
   line-height: 150%;
@@ -91,5 +91,65 @@ h1 {
 
   @media screen and (min-width: 48rem) {
     @include heading-small;
+  }
+}
+
+#question {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 120%;
+  color: $common-light;
+  font-style: normal;
+  margin: 0.75rem 0 1.5rem;
+
+  @media screen and (min-width: 48rem) {
+    @include heading-medium;
+    margin-top: 1.68rem;
+  }
+}
+
+button {
+  font-size: 1.125rem;
+  font-weight: 500;
+
+  @media screen and (min-width: 48rem) {
+    @include heading-small;
+  }
+}
+
+#err-msg {
+  font-size: 1.125rem;
+
+  @media screen and (min-width: 48rem) {
+    @include body-medium;
+  }
+}
+
+.result-card p {
+  font-size: 1.125rem;
+
+  @media screen and (min-width: 48rem) {
+    @include body-medium;
+  }
+}
+
+#score {
+  font-size: 5.5rem;
+  line-height: 100%;
+  font-weight: 500;
+  color: $common-light;
+
+  @media screen and (min-width: 48rem) {
+    font-size: 9rem;
+  }
+}
+
+body:has(#toggle:checked) {
+  #question {
+    color: $common-dark;
+  }
+
+  #score {
+    color: $common-dark;
   }
 }

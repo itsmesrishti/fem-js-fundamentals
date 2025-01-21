@@ -1,4 +1,16 @@
 @mixin flex-center {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+}
+
+@mixin hide-category-style {
+  background-color: transparent;
+  padding: 0;
+  height: unset;
+  margin-bottom: unset;
+}
+
+@mixin toggle-img-style {
+  display: block;
+  transform: scale(0.65);
 }
