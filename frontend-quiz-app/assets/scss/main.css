@@ -148,6 +148,7 @@ header .category {
   height: unset;
   margin-bottom: unset;
   text-transform: capitalize;
+  display: none;
 }
 
 body:has(#toggle:checked) header .category {
@@ -259,6 +260,12 @@ body:has(#toggle:checked) header .category {
   background-color: #F4F6FA;
   color: #626C7F;
 }
+.category label {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 @media screen and (min-width: 48rem) {
   .category {
     height: 5rem;
@@ -303,18 +310,18 @@ input[type=radio] {
   display: none;
 }
 
-.category:has(input[type=radio]:checked) {
+.category:has(input:checked) {
   outline: 3px solid #A729F5;
 }
-.category:has(input[type=radio]:checked) .option {
+.category:has(input:checked) .option {
   background-color: #A729F5;
   color: #fff;
 }
 
-.category.correct-ans-selected {
+.category:has(input:checked).correct-ans-selected {
   outline: 3px solid #26D782;
 }
-.category.correct-ans-selected .option {
+.category:has(input:checked).correct-ans-selected .option {
   background-color: #26D782;
   color: #fff;
 }
@@ -326,14 +333,14 @@ input[type=radio] {
   right: 0.7rem;
 }
 
-.category.wrong-ans-selected {
+.category:has(input:checked).wrong-ans-selected {
   outline: 3px solid #EE5454;
 }
-.category.wrong-ans-selected .option {
+.category:has(input:checked).wrong-ans-selected .option {
   background-color: #EE5454;
   color: #fff;
 }
-.category.wrong-ans-selected::after {
+.category:has(input:checked).wrong-ans-selected::after {
   content: url("/assets/images/icon-incorrect.svg");
   display: block;
   position: absolute;
@@ -442,6 +449,10 @@ main {
 
 .ques-num {
   margin-top: 0;
+}
+
+#ques-num {
+  margin: 0 0.3rem;
 }
 
 #err-msg {

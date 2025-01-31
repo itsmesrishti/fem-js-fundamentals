@@ -18,6 +18,11 @@
   </head>
   <body>
     <header>
+      <div class="category" id="">
+        <div class="option">
+          <img src="" alt="" width="30" />
+        </div>
+      </div>
       <div class="toggle-sec">
         <label
           ><input type="checkbox" id="toggle" />
@@ -70,7 +75,7 @@
 
       <div class="quiz-screen">
         <div class="ques-group">
-          <p class="ques-num">Question<span id="ques-num"> 6 </span>of 10</p>
+          <p class="ques-num">Question<span id="ques-num"> 1 </span>of 10</p>
           <p id="question">
             Which of these color contrast ratios defines the minimum WCAG 2.1
             Level AA requirement for normal text?
@@ -79,21 +84,22 @@
         <div class="ans-group">
           <label class="category"
             ><input type="radio" name="option" /><span class="option">A</span
-            >4.5 : 1</label
-          >
+            ><span class="option-text"></span
+          ></label>
           <label class="category"
-            ><input type="radio" name="option" /><span class="option">B</span>3
-            : 1</label
-          >
+            ><input type="radio" name="option" /><span class="option">B</span>
+            <span class="option-text"></span
+          ></label>
           <label class="category"
             ><input type="radio" name="option" /><span class="option">C</span
-            >2.5 : 1</label
-          >
+            ><span class="option-text"></span
+          ></label>
           <label class="category"
-            ><input type="radio" name="option" /><span class="option">D</span>5
-            : 1</label
-          >
-          <button type="button" class="primary-btn">Submit answer</button>
+            ><input type="radio" name="option" /><span class="option">D</span>
+            <span class="option-text"></span
+          ></label>
+
+          <button type="button" class="primary-btn">Submit Answer</button>
           <span id="err-msg"
             ><img src="/assets/images/icon-incorrect.svg" alt="error" />Please
             select an answer</span
@@ -111,7 +117,9 @@
           </div>
           <p><span id="score">8</span> out of 10</p>
         </div>
-        <button type="button" class="primary-btn">Play Again</button>
+        <button type="button" class="primary-btn" id="play-again">
+          Play Again
+        </button>
       </div>
     </main>
   </body>

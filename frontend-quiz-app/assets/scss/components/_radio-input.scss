@@ -2,7 +2,7 @@ input[type="radio"] {
   display: none;
 }
 
-.category:has(input[type="radio"]:checked) {
+.category:has(input:checked) {
   outline: 3px solid $primary-highlight;
 
   .option {
@@ -12,7 +12,7 @@ input[type="radio"] {
 }
 
 // correct answer
-.category.correct-ans-selected {
+.category:has(input:checked).correct-ans-selected {
   outline: 3px solid $success-state;
 
   .option {
@@ -28,7 +28,7 @@ input[type="radio"] {
   right: 0.7rem;
 }
 
-.category.wrong-ans-selected {
+.category:has(input:checked).wrong-ans-selected {
   outline: 3px solid $error-state;
 
   .option {
