@@ -170,8 +170,7 @@ const checkOptionSelected = () => {
 }
 
 const submitBtnListener = () => {
-  submitAnsBtn.addEventListener("click", () => {
-   
+  submitAnsBtn.addEventListener("click", () => {  
       if (isAnswerSubmitted) {
         submitAnsBtn.innerText = "Submit Answer";
         enableOptions();

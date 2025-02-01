@@ -2,12 +2,15 @@ const subjects = document.querySelectorAll(".subjects button");
 const titleWidget = document.querySelector(".title-widget");
 const initialScreen = document.querySelector(".initial-screen");
 const quizScreen = document.querySelector(".quiz-screen");
-const headerCat = document.querySelector("header .category");
+const category = document.querySelectorAll(".category-alt");
 const quesNumEle = document.getElementById("ques-num");
 const questionEle = document.getElementById("question");
 const optionsTextEle = document.querySelectorAll(".option-text");
 const submitAnsBtn = document.querySelector(".ans-group button");
 const inputOptions = document.querySelectorAll(".ans-group input");
+const resultScreen = document.querySelector(".result-screen");
+const scoreEle = document.getElementById("score");
+const playAgainBtn = document.getElementById("play-again");
 
 let quizzes = [];
 let subject = [];
@@ -15,6 +18,8 @@ let questions = [];
 let quesNum = 0;
 let options = [];
 let selectedAns = "";
+let optionSelected = null;
+let score = 0;
 
 fetch("data.json")
   .then((res) => {
@@ -47,14 +52,39 @@ const showQuizScreen = () => {
   quizScreen.style.display = "grid";
 };
 
+const showResultScreen = () => {
+  quizScreen.style.display = "none";
+  titleWidget.style.display = "block";
+  resultScreen.style.display = "block";
+  scoreEle.innerText = score;
+  titleWidget.firstElementChild.innerHTML =
+    "Quiz completed <span>You scored... </span>";
+  titleWidget.lastElementChild.style.display = "none";
+};
+
+const showInitialScreen = () => {
+  resultScreen.style.display = "none";
+  initialScreen.style.display = "block";
+  titleWidget.firstElementChild.innerHTML =
+    "Welcome to the <span>Frontend Quiz!</span>";
+  titleWidget.lastElementChild.style.display = "block";
+};
+
 const showHeaderCat = () => {
   let subTitle = subject["title"].toLowerCase();
 
-  headerCat.style.display = "flex";
-  headerCat.insertAdjacentText("beforeend", subject["title"]);
-  headerCat.id = subTitle;
-  headerCat.querySelector("img").src = subject["icon"];
-  headerCat.querySelector("img").alt = subTitle;
+  category.forEach((cat) => {
+    cat.id = subTitle;
+    cat.style.display = "flex";
+    cat.insertAdjacentHTML(
+      "beforeend",
+      `
+      <div class="option">
+              <img src="${subject["icon"]}" alt="${subTitle}" width="30" />
+            </div>${subject["title"]}
+      `
+    );
+  });
 };
 
 const showQuestion = () => {
@@ -73,23 +103,53 @@ const showOptions = () => {
 };
 
 const isOptionSelected = () => {
-  let optionSelected = Array.from(inputOptions).find(
+  optionSelected = Array.from(inputOptions).find(
     (inputOption) => inputOption.checked
   );
 
-  selectedAns = optionSelected.parentElement.lastChild.innerText;
+  if (optionSelected) {
+    selectedAns = optionSelected.parentElement.lastChild.innerText;
+  }
 
   return optionSelected ? true : false;
 };
 
 const checkAnswer = (selectedAns) => {
   if (selectedAns === questions[quesNum]["answer"]) {
-    alert("true");
+    score += 1;
     return true;
   } else {
-    alert("false");
     return false;
   }
+};
+
+const applyAnswerStyle = () => {
+  if (checkAnswer(selectedAns)) {
+    optionSelected.parentElement.classList.add("correct-ans-selected");
+    optionSelected.parentElement.classList.add("correct-ans");
+  } else {
+    optionSelected.parentElement.classList.add("wrong-ans");
+    optionSelected.parentElement.classList.add("wrong-ans-selected");
+  }
+};
+
+const disableOptions = () => {
+  inputOptions.forEach((inputOption) => {
+    inputOption.disabled = true;
+    inputOption.parentElement.style.cursor = "default";
+  });
+};
+
+const reset = () => {
+  inputOptions.forEach((inputOption) => {
+    inputOption.disabled = false;
+    inputOption.parentElement.style.cursor = "pointer";
+  });
+  optionSelected.checked = false;
+  optionSelected.parentElement.className = "category";
+  options = [];
+  selectedAns = "";
+  optionSelected = null;
 };
 
 subjects.forEach((sub) => {
@@ -105,9 +165,36 @@ subjects.forEach((sub) => {
 
 submitAnsBtn.addEventListener("click", () => {
   if (isOptionSelected()) {
-    checkAnswer(selectedAns);
+    if (submitAnsBtn.innerText === "Submit Answer") {
+      applyAnswerStyle();
+      disableOptions();
+
+      if (quesNum === 9) {
+        submitAnsBtn.innerText = "See Score";
+      } else {
+        submitAnsBtn.innerText = "Next Question";
+      }
+    } else if (submitAnsBtn.innerText === "Next Question") {
+      reset();
+      submitAnsBtn.innerText = "Submit Answer";
+      quesNum += 1;
+      showQuestion();
+      showOptions();
+    } else if (submitAnsBtn.innerText === "See Score") {
+      reset();
+      showResultScreen();
+      submitAnsBtn.innerText = "Submit Answer";
+    }
   } else {
     alert("please select an option");
   }
-  isOptionSelected();
+});
+
+playAgainBtn.addEventListener("click", () => {
+  showInitialScreen();
+  score = 0;
+  quesNum = 0;
+  category.forEach((cat) => {
+    cat.innerHTML = "";
+  });
 });
