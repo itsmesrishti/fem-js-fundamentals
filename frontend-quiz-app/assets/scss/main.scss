@@ -72,6 +72,10 @@ main {
     & > section {
       width: 50%;
       max-width: 35.25rem;
+
+      @media screen and (max-height: 41.5rem) and (orientation: landscape) {
+        max-width: 50.4rem;
+      }
     }
   }
 }

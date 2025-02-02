@@ -82,7 +82,7 @@ const showHeaderCat = () => {
       `
       <div class="option">
               <img src="${subject["icon"]}" alt="${subTitle}" width="30" />
-            </div>${subject["title"]}
+            </div><span>${subject["title"]}</span>
       `
     );
   });

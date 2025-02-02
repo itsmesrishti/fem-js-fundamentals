@@ -25,7 +25,8 @@ input[type="radio"] {
   content: url("/assets/images/icon-correct.svg");
   display: block;
   position: absolute;
-  right: 0.7rem;
+  right: 0.3rem;
+  top: calc(50% - 20px);
 }
 
 .category:has(input:checked).wrong-ans-selected {
@@ -40,7 +41,7 @@ input[type="radio"] {
     content: url("/assets/images/icon-incorrect.svg");
     display: block;
     position: absolute;
-    right: 0.7rem;
-    top: 0.75rem;
+    right: 0.3rem;
+    top: calc(50% - 20px);
   }
 }
