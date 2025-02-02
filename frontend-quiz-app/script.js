@@ -21,7 +21,7 @@ let selectedAns = "";
 let optionSelected = null;
 let score = 0;
 
-// chatgpt recommended way of fetching data when user interacts 
+// chatgpt recommended way of fetching data when user interacts
 // and not on page load like I was previously doing
 const loadQuizData = async () => {
   try {
@@ -134,18 +134,19 @@ const applyAnswerStyle = () => {
   }
 };
 
-const disableOptions = () => {
+// chatgpt recommendation
+// to club enabling and diabling in one function
+const toggleOptions = (disabledState) => {
   inputOptions.forEach((inputOption) => {
-    inputOption.disabled = true;
-    inputOption.parentElement.style.cursor = "default";
+    inputOption.disabled = disabledState;
+    inputOption.parentElement.style.cursor = disabledState
+      ? "default"
+      : "pointer";
   });
 };
 
 const reset = () => {
-  inputOptions.forEach((inputOption) => {
-    inputOption.disabled = false;
-    inputOption.parentElement.style.cursor = "pointer";
-  });
+  toggleOptions(false); // enables options
   optionSelected.checked = false;
   optionSelected.parentElement.className = "category";
   options = [];
@@ -155,7 +156,7 @@ const reset = () => {
 
 subjects.forEach((sub) => {
   sub.addEventListener("click", async (e) => {
-    // subSelected = e.target.id || e.target.alt; 
+    // subSelected = e.target.id || e.target.alt;
     subSelected = e.target.closest("button").id; // chatgpt recommendation
     await loadQuizData(); // chatgpt recommendation
     showQuizScreen();
@@ -170,7 +171,7 @@ submitAnsBtn.addEventListener("click", () => {
   if (isOptionSelected()) {
     if (submitAnsBtn.innerText === "Submit Answer") {
       applyAnswerStyle();
-      disableOptions();
+      toggleOptions(true); // disables option
 
       if (quesNum === 9) {
         submitAnsBtn.innerText = "See Score";
