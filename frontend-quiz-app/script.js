@@ -163,7 +163,8 @@ const reset = () => {
 
 subjects.forEach((sub) => {
   sub.addEventListener("click", async (e) => {
-    subSelected = e.target.id || e.target.alt;
+    // subSelected = e.target.id || e.target.alt;
+    subSelected = e.target.closest("button").id;
     await loadQuizData();
     showQuizScreen();
     extractQuiz(subSelected);
