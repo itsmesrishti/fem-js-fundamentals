@@ -20,17 +20,26 @@ let options = [];
 let selectedAns = "";
 let optionSelected = null;
 let score = 0;
-
 fetch("data.json")
-  .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+
+const loadQuizData = async () => {
+  try {
+    const res = await fetch("data.json");
+    const data = await res.json();
     quizzes = data["quizzes"];
-  })
-  .catch((err) => {
+  } catch (err) {
     console.error(err);
-  });
+  }
+};
 
 const extractQuiz = (subSelected) => {
   if (subSelected === "html") {
@@ -153,8 +162,9 @@ const reset = () => {
 };
 
 subjects.forEach((sub) => {
-  sub.addEventListener("click", (e) => {
+  sub.addEventListener("click", async (e) => {
     subSelected = e.target.id || e.target.alt;
+    await loadQuizData();
     showQuizScreen();
     extractQuiz(subSelected);
     showHeaderCat();
