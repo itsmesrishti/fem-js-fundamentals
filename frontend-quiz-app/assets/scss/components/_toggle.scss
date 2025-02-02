@@ -55,6 +55,11 @@
     @include toggle-img-style;
   }
 
+  &:has(#toggle:focus) .toggle-view {
+    outline: 2px solid $primary-highlight;
+    outline-offset: 1.5px;
+  }
+
   &:has(#toggle:checked) {
     .toggle-view::before {
       right: auto;

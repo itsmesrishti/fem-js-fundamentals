@@ -17,3 +17,8 @@
     height: unset;
   }
 }
+
+button:focus {
+  outline: 3px solid $primary-highlight;
+  outline-offset: 2px;
+}

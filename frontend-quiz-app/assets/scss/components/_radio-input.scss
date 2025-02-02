@@ -1,8 +1,11 @@
 input[type="radio"] {
-  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
 }
 
-.category:has(input:checked) {
+.category:has(input:checked),
+.category:focus {
   outline: 3px solid $primary-highlight;
 
   .option {

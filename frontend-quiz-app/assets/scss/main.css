@@ -213,6 +213,10 @@ body:has(#toggle:checked) header .category {
   display: block;
   transform: scale(0.65);
 }
+.toggle-sec:has(#toggle:focus) .toggle-view {
+  outline: 2px solid #A729F5;
+  outline-offset: 1.5px;
+}
 .toggle-sec:has(#toggle:checked) .toggle-view::before {
   right: auto;
   left: 0.2rem;
@@ -312,13 +316,17 @@ body:has(#toggle:checked) .category {
 }
 
 input[type=radio] {
-  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
 }
 
-.category:has(input:checked) {
+.category:has(input:checked),
+.category:focus {
   outline: 3px solid #A729F5;
 }
-.category:has(input:checked) .option {
+.category:has(input:checked) .option,
+.category:focus .option {
   background-color: #A729F5;
   color: #fff;
 }
@@ -372,6 +380,11 @@ input[type=radio] {
     padding: 2rem;
     height: unset;
   }
+}
+
+button:focus {
+  outline: 3px solid #A729F5;
+  outline-offset: 2px;
 }
 
 .quiz-screen,
