@@ -11,6 +11,7 @@ const inputOptions = document.querySelectorAll(".ans-group input");
 const resultScreen = document.querySelector(".result-screen");
 const scoreEle = document.getElementById("score");
 const playAgainBtn = document.getElementById("play-again");
+const errMsg = document.getElementById("err-msg");
 
 let quizzes = [];
 let subject = [];
@@ -169,6 +170,7 @@ subjects.forEach((sub) => {
 
 submitAnsBtn.addEventListener("click", () => {
   if (isOptionSelected()) {
+    errMsg.style.display = "none";
     if (submitAnsBtn.innerText === "Submit Answer") {
       applyAnswerStyle();
       toggleOptions(true); // disables option
@@ -190,7 +192,7 @@ submitAnsBtn.addEventListener("click", () => {
       submitAnsBtn.innerText = "Submit Answer";
     }
   } else {
-    alert("please select an option");
+    errMsg.style.display = "flex"
   }
 });
 
