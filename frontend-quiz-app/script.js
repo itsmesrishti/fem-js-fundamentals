@@ -20,17 +20,9 @@ let options = [];
 let selectedAns = "";
 let optionSelected = null;
 let score = 0;
-fetch("data.json")
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      
-    })
-    .catch((err) => {
-      console.error(err);
-    });
 
+// chatgpt recommended way of fetching data when user interacts 
+// and not on page load like I was previously doing
 const loadQuizData = async () => {
   try {
     const res = await fetch("data.json");
@@ -163,9 +155,9 @@ const reset = () => {
 
 subjects.forEach((sub) => {
   sub.addEventListener("click", async (e) => {
-    // subSelected = e.target.id || e.target.alt;
-    subSelected = e.target.closest("button").id;
-    await loadQuizData();
+    // subSelected = e.target.id || e.target.alt; 
+    subSelected = e.target.closest("button").id; // chatgpt recommendation
+    await loadQuizData(); // chatgpt recommendation
     showQuizScreen();
     extractQuiz(subSelected);
     showHeaderCat();
