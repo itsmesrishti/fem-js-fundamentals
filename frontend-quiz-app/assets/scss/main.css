@@ -525,6 +525,11 @@ main {
     max-width: 35.25rem;
   }
 }
+@media screen and (max-height: 41.5rem) and (orientation: landscape) {
+  .result-screen {
+    max-width: 50.4rem;
+  }
+}
 
 body:has(#toggle:checked) .result-screen .category {
   background-color: transparent;
