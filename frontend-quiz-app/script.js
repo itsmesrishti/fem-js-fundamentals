@@ -22,7 +22,10 @@ let options = [];
 let selectedAns = "";
 let optionSelected = null;
 let score = 0;
-let sound = new Audio("/assets/party-popper.mp3");
+let partyPopperSound = new Audio("/assets/sounds/party-popper.mp3");
+let rightAnsSound = new Audio("/assets/sounds/right-ans.mp3");
+let wrongAnsSound = new Audio("/assets/sounds/wrong-ans.mp3");
+let perfectScoreSound = new Audio("/assets/sounds/perfect-score.mp3");
 
 // chatgpt recommended way of fetching data when user interacts
 // and not on page load like I was previously doing
@@ -129,9 +132,13 @@ const checkAnswer = (selectedAns) => {
 
 const applyAnswerStyle = () => {
   if (checkAnswer(selectedAns)) {
+    rightAnsSound.currentTime = 0;
+    rightAnsSound.play();
     optionSelected.parentElement.classList.add("correct-ans-selected");
     optionSelected.parentElement.classList.add("correct-ans");
   } else {
+    wrongAnsSound.currentTime = 0;
+    wrongAnsSound.play();
     optionSelected.parentElement.classList.add("wrong-ans");
     optionSelected.parentElement.classList.add("wrong-ans-selected");
   }
@@ -158,14 +165,13 @@ const reset = () => {
 };
 
 const showCelebration = () => {
+  partyPopperSound.play()
+  perfectScoreSound.play();
+
   confetti({
     particleCount: 200,
     spread: 360,
   });
-};
-
-const partyPopperSound = () => {
-  sound.play();
 };
 
 subjects.forEach((sub) => {
@@ -202,13 +208,14 @@ submitAnsBtn.addEventListener("click", () => {
     } else if (submitAnsBtn.innerText === "See Score") {
       reset();
       if (score === 10) {
-        partyPopperSound();
         showCelebration();
       }
       showResultScreen();
       submitAnsBtn.innerText = "Submit Answer";
     }
   } else {
+    wrongAnsSound.currentTime = 0;
+    wrongAnsSound.play();
     errMsg.style.display = "flex";
   }
 });
