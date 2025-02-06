@@ -22,6 +22,7 @@ let options = [];
 let selectedAns = "";
 let optionSelected = null;
 let score = 0;
+let sound = new Audio("/assets/party-popper.mp3");
 
 // chatgpt recommended way of fetching data when user interacts
 // and not on page load like I was previously doing
@@ -164,8 +165,7 @@ const showCelebration = () => {
 };
 
 const partyPopperSound = () => {
-  let ding = new Audio("/assets/party-popper.mp3");
-  ding.play();
+  sound.play();
 };
 
 subjects.forEach((sub) => {
