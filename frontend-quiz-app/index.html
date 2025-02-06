@@ -14,15 +14,19 @@
 
     <link rel="stylesheet" href="/assets/scss/main.css" />
 
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script src="/script.js" defer></script>
   </head>
   <body>
     <header>
-      <div class="category category-alt" id="">
-      </div>
+      <div class="category category-alt" id=""></div>
       <div class="toggle-sec">
         <label
-          ><input type="checkbox" id="toggle" aria-label="dark or light theme toggle" />
+          ><input
+            type="checkbox"
+            id="toggle"
+            aria-label="dark or light theme toggle"
+          />
           <span class="toggle-view"></span>
         </label>
       </div>
@@ -106,8 +110,7 @@
 
       <div class="result-screen">
         <div class="result-card">
-          <div class="category category-alt" id="">
-          </div>
+          <div class="category category-alt" id=""></div>
           <p><span id="score">8</span> out of 10</p>
         </div>
         <button type="button" class="primary-btn" id="play-again">

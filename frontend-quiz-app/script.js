@@ -12,6 +12,7 @@ const resultScreen = document.querySelector(".result-screen");
 const scoreEle = document.getElementById("score");
 const playAgainBtn = document.getElementById("play-again");
 const errMsg = document.getElementById("err-msg");
+const celebrationWidget = document.getElementById("celebration");
 
 let quizzes = [];
 let subject = [];
@@ -155,6 +156,18 @@ const reset = () => {
   optionSelected = null;
 };
 
+const showCelebration = () => {
+  confetti({
+    particleCount: 200,
+    spread: 360,
+  });
+};
+
+const partyPopperSound = () => {
+  let ding = new Audio("/assets/party-popper.mp3");
+  ding.play();
+};
+
 subjects.forEach((sub) => {
   sub.addEventListener("click", async (e) => {
     // subSelected = e.target.id || e.target.alt;
@@ -188,11 +201,15 @@ submitAnsBtn.addEventListener("click", () => {
       showOptions();
     } else if (submitAnsBtn.innerText === "See Score") {
       reset();
+      if (score === 10) {
+        partyPopperSound();
+        showCelebration();
+      }
       showResultScreen();
       submitAnsBtn.innerText = "Submit Answer";
     }
   } else {
-    errMsg.style.display = "flex"
+    errMsg.style.display = "flex";
   }
 });
 
