@@ -5,6 +5,7 @@
   src: local("Rubik"),
     url("/assets/fonts/Rubik-VariableFont_wght.ttf") format("truetype"),
     url("/assets/fonts/Rubik-Italic-VariableFont_wght.ttf") format("truetype");
+    font-display: swap;
 }
 
 // mixins
